@@ -1,6 +1,7 @@
 import React  from 'react';
-import menu from '../../menu_logo.png';
-import '../../App.css';
+import logo from '../../menu_logo.png';
+import UserContext from '../../shared/user.context'
+// import '../../App.css';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
@@ -15,13 +16,18 @@ class HomePage extends React.Component {
     }
     render() {
         return (
-            <div>
-                <header className="App-header">                    
-                    <img src={menu} className="App-logo" alt="menu" />
-                </header>
-                <h1>Delivery Menu Food App</h1>
-                <p>{this.state.welcome}</p>
-            </div>         
+            <UserContext.Consumer>
+                { ({user}) => (
+                    <div>
+                        <header className="App-header">                    
+                            <img src={logo} className="App-logo" alt="menu" />
+                        </header>
+                        <h1>Delivery Menu Food App</h1>
+                        <p>Welcome, {user.name}</p>
+                    </div>
+                )}
+                 
+            </UserContext.Consumer>  
           
         );
     }

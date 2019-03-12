@@ -4,11 +4,17 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 
 class Login extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        date: []
+      }
+    }
 
   render() {
 
     const responseFacebook = (response) => {
-      console.log(response);
+      console.log(response);      
     }
 
     const responseGoogle = (response) => {
@@ -32,7 +38,7 @@ class Login extends Component {
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
               />
-
+              <h3>Welcome </h3>
           </div>
     );
   }

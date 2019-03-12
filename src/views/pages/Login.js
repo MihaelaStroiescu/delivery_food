@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './App.css';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 
@@ -17,7 +17,7 @@ class Login extends Component {
 
       return (
           <div className="App">
-              <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
+              <h2>LOGIN WITH:</h2>
 
               <FacebookLogin
                   appId="1992350001069404" //APP ID NOT CREATED YET

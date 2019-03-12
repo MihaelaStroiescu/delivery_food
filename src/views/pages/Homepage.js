@@ -1,11 +1,18 @@
 import React  from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import logo from '../../logo.svg';
+import '../../App.css';
+// import axios from 'axios';
+// import { Link } from 'react-router-dom';
 
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ceva: "ceva banal",
+            posts: []
+        };
+    }
     render() {
         return (
             <div>
@@ -13,7 +20,9 @@ class HomePage extends React.Component {
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
                 <h1>Delivery Menu Food App</h1>
-            </div>
+                <p>{this.state.ceva}</p>
+            </div>         
+          
         );
     }
 }

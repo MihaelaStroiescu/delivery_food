@@ -24,7 +24,8 @@ class HomePage extends React.Component {
                         <header className="App-header">
                             <img src={logo} className="App-logo" alt="menu" />
                         </header>
-                        <p>Welcome, {user.name}</p>
+                        <h1>Delivery Menu Food App</h1>
+                        <p>Welcome, { user.name }</p>
                     </div>
                 )}
 

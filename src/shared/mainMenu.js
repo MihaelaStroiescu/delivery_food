@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, FormControl, Form, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import menu from '../menu_logo.png';
+import { logo } from '../images/index.js';
 
 
 class MainMenu extends React.Component {
@@ -10,7 +10,7 @@ class MainMenu extends React.Component {
             <Navbar bg="dark" variant="dark" expand="sm">
                 <LinkContainer to='/'>
                     <Navbar.Brand>
-                        <img src= {menu} width="40" height="40" className="d-inline-block align-top" alt="React Bootstrap logo" />
+                        <img src= {logo} width="40" height="40" className="d-inline-block align-top" alt="React Bootstrap logo" />
                     </Navbar.Brand>
                 </LinkContainer>
 
@@ -26,7 +26,7 @@ class MainMenu extends React.Component {
                         </LinkContainer>
                         <LinkContainer to="/login">
                             <Nav.Link>Login</Nav.Link>
-                        </LinkContainer>                
+                        </LinkContainer>
                     </Nav>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

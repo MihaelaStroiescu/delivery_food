@@ -23,7 +23,12 @@ class Login extends Component {
   }
 
   responseGoogle = (response) => {
-    this.context.handleUserChange(response);
+    console.log(response);
+    
+    this.context.handleUserChange(response.profileObj);
+    this.setState({
+      redirect: true
+    });
   }
 
   render() {

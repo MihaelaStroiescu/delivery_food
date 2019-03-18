@@ -30,13 +30,13 @@
 }
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: s;
   align-content: space-around;
 }
 
 .menu_options img{
   position: relative;
-  width: 100%;
+  width: auto;
   padding: 10px 0;
 }
 

@@ -24,6 +24,9 @@ class MainMenu extends React.Component {
                         <LinkContainer to="/order">
                             <Nav.Link>Order</Nav.Link>
                         </LinkContainer>
+                        <LinkContainer to="/orderdetails">
+                            <Nav.Link>OrderDetails</Nav.Link>
+                        </LinkContainer>
                         <LinkContainer to="/login">
                             <Nav.Link>Login</Nav.Link>
                         </LinkContainer>

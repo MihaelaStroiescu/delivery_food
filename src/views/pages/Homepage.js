@@ -1,10 +1,9 @@
 import React  from 'react';
 
 import UserContext from '../../shared/user.context';
-import { logo, appeteasers, fino_side, peri_peri_chicken, sharing_platters, dessert, sides, cataplana_algarve, salads, burgers_pitas_wraps } from '../../images/index.js';
+import { logo, bottle, phone, trophy } from '../../images/index.js';
 import '../../App.css';
-// import axios from 'axios';
-// import { Link } from 'react-router-dom';
+
 
 
 class HomePage extends React.Component {
@@ -20,48 +19,34 @@ class HomePage extends React.Component {
             <>
             <UserContext.Consumer>
                 { ({user}) => (
-                    <div>
-                        <header className="App-header">
-                            <img src={logo} className="App-logo" alt="menu" />
-                        </header>
-                        <h1>Delivery Menu Food App</h1>
-                        <p>Welcome, { user.name }</p>
-                    </div>
-                )}
-
-            </UserContext.Consumer>
-            <div className="wrapper_main">
-                <section className="deliver_intro">
-                    <h2>Your neighborhood. Delivered.</h2>
-                    <p>Hungry for sushi? How ‘bout Italian? Satisfy any craving with a few quick clicks and enjoy the wonderful world of delivery. Whether you’re at home, at work, or on the go, delivery.com lets you connect with your favorite local restaurants and easily discover new ones.</p>
+                    <>
+            <div className="wrapper_homepage">
+                <section className="homepage_intro" style={{
+                    backgroundImage: "url(https://buyer-static.postmates.com/dist/prod/postmates-share-image.9672924ea0390b5463f04664b04867d45837a47343a9a4a270746e3a4942cfa37d375ee60417eb26803966e4be663705fd86e7bdc1ff8e6c8a97a4f5bb30fa28.png)",
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                }}>
+                <div className="homepage_user">
+                    <p>Welcome, {user.name}</p>
+                </div>
                 </section>
-                <section className="wrapper_homepage">
-                <h3>Popular Cuisines</h3>
-                    <div className="container_homepage">
-                        <div className="row menu">
-                            <div className="col-sm menu_options">
-                                <img src={appeteasers} alt="Appeteasers"/>
-                                <span className="seoImageTile__title">Appeteasers</span>
-                                <img src={fino_side} alt="Fino side"/>
-                                    <span className="seoImageTile__title">Fino side</span>
-                                <img src={peri_peri_chicken} alt="Peri peri chicken"/>
-                            </div>
-                            <div className="col-sm menu_options">
-                                <img src={sharing_platters} alt="Sharing platters" />
-                                <img src={dessert} alt="Dessert" />
-                                <img src={sides} alt="Sides"/>
-                            </div>
-                            <div className="col-sm menu_options">
-                                <img src={cataplana_algarve} alt="Cataplana algrave" />
-                                <img src={salads} alt="salads" />
-                                <img src={burgers_pitas_wraps} alt="Burgers, pitas, wraps"/>
-                            </div>
-                        </div>
+                <section className="homepage_middle">
+                    <h2>Why order with Delivery Food</h2>
+                    <div className="homepage_image_middle">
+                        <img src={bottle} alt="Bottle" />
+                        <img src={phone} alt="Phone" />
+                        <img src={trophy} alt="Trophy" />
                     </div>
                 </section>
             </div>
             </>
+            )}
+            </UserContext.Consumer>
+            </>
         );
     }
 }
+
+
 export default HomePage;

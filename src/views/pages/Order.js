@@ -37,9 +37,9 @@ class Order extends React.Component {
                         <Container>  
                             <Row>   
                                  {this.state.category.map(categ =>
-                                    <Col sm={4}>                                
+                                    <Col sm={4} className="categ">                                
                                         <Link to={"/ordermenu/" + categ.id}>
-                                            {categ.name}                                      
+                                                <span className="name_categ">{categ.name}</span>                                      
                                             <Image src={appeteasers} alt="" name={categ.name} title={categ.name} fluid/>
                                         </Link> 
                                     </Col>    

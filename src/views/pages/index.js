@@ -1,11 +1,11 @@
 import Homepage from './Homepage';
 import Order from './Order';
-import OrderDetails from './OrderDetails';
 import Login from './Login';
+import OrderMenu from './OrderMenu';
 
 export {
     Homepage,
     Order,
-    OrderDetails,
-    Login
+    Login,
+    OrderMenu
 }

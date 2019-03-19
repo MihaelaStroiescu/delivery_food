@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from './shared/mainMenu';
 import UserContext from './shared/user.context';
-import { Homepage, Order, Login } from './views/pages';
+import { Homepage, Order, Login, OrderMenu } from './views/pages';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -34,6 +34,7 @@ class App extends  React.Component {
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
               <Route exact path="/login" component={ Login } />
+              <Route exact path="/ordermenu/:id" component={ OrderMenu } />
           </div>
         </UserContext.Provider>
     </BrowserRouter>

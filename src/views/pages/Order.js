@@ -9,20 +9,22 @@ import { Container, Row, Col, Image} from 'react-bootstrap';
 class Order extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {           
-            category: [],                     
+        this.state = {
+            category: [],
         };
         this.apiUrl = "http://localhost:3004/menu";
-       
+
     }
 
     async componentDidMount() {
         const resp = await axios.get(this.apiUrl);
 
         this.setState({category: resp.data});
-       console.log(resp.data);       
+       console.log(resp.data);
     }
+
     render() {
+
         return (
             <>
                 <UserContext.Consumer>
@@ -31,26 +33,25 @@ class Order extends React.Component {
                         <Container>
                             <header className="App-header">
                                 <img src={logo} className="App-logo" alt="menu" />
-                            </header>  
-                            <p>Welcome, {user.name}</p>                    
+                            </header>
+                            <p>Welcome, {user.name}</p>
                         </Container>
-                        <Container>  
-                            <Row>   
+                        <Container>
+                            <Row>
                                  {this.state.category.map(categ =>
-                                    <Col sm={4} className="categ">                                
+                                    <Col sm={4} className="categ">
                                         <Link to={"/ordermenu/" + categ.id}>
-                                                <span className="name_categ">{categ.name}</span>                                      
+                                                <span className="name_categ">{categ.name}</span>
                                             <Image src={appeteasers} alt="" name={categ.name} title={categ.name} fluid/>
-                                        </Link> 
-                                    </Col>    
-                                )} 
+                                        </Link>
+                                    </Col>
+                                )}
                             </Row>
-                        </Container>    
+                        </Container>
                     </>
                     )}
-                </UserContext.Consumer>       
+                </UserContext.Consumer>
            </>
         );
     }}
 export default Order;
-

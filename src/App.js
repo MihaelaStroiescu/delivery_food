@@ -29,10 +29,11 @@ class App extends  React.Component {
         <UserContext.Provider value={ {user: this.state.user, handleUserChange: this.handleUserChange} }>
           <div className="App">
               <MainMenu site_name="Delivery Food App"/>
-              <h1>Delivery Menu Food</h1>
+              {/* <h1>Delivery Menu Food</h1> */}
 
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
+              <Route exact path="order/orderdetails" component={ OrderDetails } />
               <Route exact path="/login" component={ Login } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
           </div>

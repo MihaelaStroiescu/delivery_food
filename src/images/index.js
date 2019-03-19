@@ -8,6 +8,10 @@ import cataplana_algarve from './cataplana-algarve.jpg';
 import salads from './salads.jpg';
 import burgers_pitas_wraps from './burgers-pitas-wraps.jpg';
 import logo from './menu_logo.png';
+import start_homepage_one from './start-homepage-one.jpg';
+import bottle from './bottle.png';
+import phone from './phone.png';
+import trophy from './trophy.png';
 
 
 export {
@@ -20,4 +24,9 @@ export {
     cataplana_algarve,
     salads,
     burgers_pitas_wraps,
-    logo };
+    logo,
+    start_homepage_one,
+    bottle,
+    phone,
+    trophy
+     };

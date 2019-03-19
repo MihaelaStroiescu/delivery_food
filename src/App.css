@@ -9,6 +9,37 @@
   transform: rotate(-20deg);
 }
 
+.homepage_intro {
+  margin: 0 auto;
+  width: 90%;
+  height: 500px;
+}
+
+.homepage_user {
+  padding: 50px 0px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.homepage_middle {
+  margin: auto;
+  padding: 50px 0;
+  font-weight: normal;
+
+}
+
+.homepage_image_middle {
+padding: 50px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.homepage_image_middle img{
+  width: 10%;
+  height: 10%;
+}
+
 .App-header {
   background-color: #ffffff;
   min-height: 20vh;

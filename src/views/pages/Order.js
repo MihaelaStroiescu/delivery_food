@@ -1,17 +1,12 @@
 import React from 'react';
-
 import UserContext from '../../shared/user.context';
 import { logo, appeteasers, fino_side, peri_peri_chicken, sharing_platters, dessert, sides, cataplana_algarve, salads, burgers_pitas_wraps } from '../../images/index.js';
 import '../../App.css';
+//import '../../SubItems';
+// import { Link } from 'react-router-dom';
+//import {SingleSelectTable } from '../../views/pages';
 
 class Order extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            welcome: "Welcome To our Food App Menu",
-            posts: []
-        };
-    }
     render() {
         return (
             <>
@@ -21,7 +16,7 @@ class Order extends React.Component {
                             <header className="App-header">
                                 <img src={logo} className="App-logo" alt="menu" />
                             </header>
-                            <h1>Delivery Menu Food</h1>
+                            
                             <p>Welcome, {user.name}</p>
                         </div>
                     )}
@@ -29,8 +24,8 @@ class Order extends React.Component {
                 </UserContext.Consumer>
                 <div className="wrapper_main">
                     <section className="deliver_intro">
-                        <h2>Your neighborhood. Delivered.</h2>
-                        <p>Hungry for sushi? How ‘bout Italian? Satisfy any craving with a few quick clicks and enjoy the wonderful world of delivery. Whether you’re at home, at work, or on the go, delivery.com lets you connect with your favorite local restaurants and easily discover new ones.</p>
+                        <h1>Ordering YourMenu has never been easier</h1>
+                        
                     </section>
                     <section className="wrapper_homepage">
                         <h3>Popular Cuisines</h3>

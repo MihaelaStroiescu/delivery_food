@@ -32,8 +32,7 @@ class App extends  React.Component {
               {/* <h1>Delivery Menu Food</h1> */}
 
               <Route exact path="/" component={ Homepage } />
-              <Route exact path="/order" component={ Order } />
-              <Route exact path="order/orderdetails" component={ OrderDetails } />
+              <Route exact path="/order" component={ Order } />              
               <Route exact path="/login" component={ Login } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
           </div>

@@ -1,3 +1,6 @@
+:root {
+  font-family: 'Open Sans',Arial,sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -7,37 +10,6 @@
   height: 20vmin;
   pointer-events: none;
   transform: rotate(-20deg);
-}
-
-.homepage_intro {
-  margin: 0 auto;
-  width: 90%;
-  height: 500px;
-}
-
-.homepage_user {
-  padding: 50px 0px;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.homepage_middle {
-  margin: auto;
-  padding: 50px 0;
-  font-weight: normal;
-
-}
-
-.homepage_image_middle {
-padding: 50px;
-  display: flex;
-  justify-content: space-around;
-
-}
-
-.homepage_image_middle img{
-  width: 10%;
-  height: 10%;
 }
 
 .App-header {
@@ -53,49 +25,6 @@ padding: 50px;
 
 .App-link {
   color: #61dafb;
-}
-
-.wrapper_main {
-  margin: auto;
-  width: 80%;
-}
-.categ {
-  padding-bottom: 15px;
-  padding-top: 15px;
-}
-
-.name_categ {
-  position: absolute;
-  color: #fff;
-  font-size: 1.4667rem;
-  text-align: left;
-  bottom: 50px;
-  left: 50px;
-  z-index: 1;
-  text-shadow: 2px 1px 2px rgba(0,0,0,.5);
-}
-
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  
-}
-
-.menu_options img{
-  position: relative;
-  width: auto;
-  padding: 10px 0;
-}
-
-.menu_options .seoImageTile__title {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 99;
-  font-size: 25px;
-  font-weight: bold;
-  /* color: white; */
 }
 
 @keyframes App-logo-spin {

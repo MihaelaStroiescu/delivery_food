@@ -2,7 +2,9 @@ import React  from 'react';
 
 import UserContext from '../../shared/user.context';
 import { logo, bottle, phone, trophy } from '../../images/index.js';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import '../../App.css';
+import '../../Homepage.css';
 
 
 
@@ -21,24 +23,31 @@ class HomePage extends React.Component {
                 { ({user}) => (
                     <>
             <div className="wrapper_homepage">
-                <section className="homepage_intro" style={{
-                    backgroundImage: "url(https://buyer-static.postmates.com/dist/prod/postmates-share-image.9672924ea0390b5463f04664b04867d45837a47343a9a4a270746e3a4942cfa37d375ee60417eb26803966e4be663705fd86e7bdc1ff8e6c8a97a4f5bb30fa28.png)",
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                }}>
+                <section className="homepage_intro">
                 <div className="homepage_user">
                     <p>Welcome, {user.name}</p>
                 </div>
                 </section>
-                <section className="homepage_middle">
-                    <h2>Why order with Delivery Food</h2>
-                    <div className="homepage_image_middle">
-                        <img src={bottle} alt="Bottle" />
-                        <img src={phone} alt="Phone" />
-                        <img src={trophy} alt="Trophy" />
-                    </div>
-                </section>
+                <Container className="homepage_middle">
+                <h2>Why order with Delivery Food</h2>
+                    <Row>
+                        <Col xs={6} md={4}>
+                            <Image className="homepage_middle_img" src={bottle} alt="Bottle"/>
+                            <h3>Find Favorites and Discover New Ones</h3>
+                            <p>Browse thousands of restaurants and stores to get the best of your neighborhood delivered.</p>
+                        </Col>
+                        <Col xs={6} md={4}>
+                            <Image className="homepage_middle_img" src={phone} alt="Phone" />
+                            <h3>Free, Easy, and Essential</h3>
+                            <p>It's free to order, so save time tackling your to-do list at home, at work, or on the go.</p>
+                        </Col>
+                        <Col xs={6} md={4}>
+                            <Image className="homepage_middle_img" src={trophy} alt="Trophy" />
+                            <h3>Earn Points and Get Rewards</h3>
+                            <p>It's free to order, so save time tackling your to-do list at home, at work, or on the go.</p>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             </>
             )}

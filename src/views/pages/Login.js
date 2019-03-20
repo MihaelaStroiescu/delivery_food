@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import './App.css';
+import '../../App.css';
+import '../../Login.css';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import UserContext from '../../shared/user.context';
@@ -24,7 +25,7 @@ class Login extends Component {
 
   responseGoogle = (response) => {
     console.log(response);
-    
+
     this.context.handleUserChange(response.profileObj);
     this.setState({
       redirect: true
@@ -62,6 +63,6 @@ class Login extends Component {
   }
 }
 
-Login.contextType = UserContext; 
+Login.contextType = UserContext;
 
 export default Login;

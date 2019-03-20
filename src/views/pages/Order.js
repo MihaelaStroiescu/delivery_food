@@ -2,6 +2,7 @@ import React from 'react';
 import UserContext from '../../shared/user.context';
 import { logo, appeteasers, fino_side, peri_peri_chicken, sharing_platters, dessert, sides, cataplana_algarve, salads, burgers_pitas_wraps } from '../../images/index.js';
 import '../../App.css';
+import '../../Order.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Image} from 'react-bootstrap';

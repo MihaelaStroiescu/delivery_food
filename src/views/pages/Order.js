@@ -41,8 +41,8 @@ class Order extends React.Component {
                                  {this.state.category.map(categ =>
                                     <Col sm={4} className="categ">
                                         <Link to={"/ordermenu/" + categ.id}>
-                                                <span className="name_categ">{categ.name}</span>
-                                            <Image src={appeteasers} alt="" name={categ.name} title={categ.name} fluid/>
+                                                <span className="name_categ">{categ.name}</span>                                           
+                                            <Image src={"images/" + categ.images} alt="" name={categ.name} title={categ.name} fluid/> 
                                         </Link>
                                     </Col>
                                 )}

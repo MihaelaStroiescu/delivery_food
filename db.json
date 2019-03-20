@@ -4,13 +4,14 @@
       "id": "26576",
       "name": "Appeteasers",
       "position": "0",
+      "images": "appeteasers.jpg",
       "menu-items": [
         {
           "id": "94298",
           "name": "3 Chicken Wings",
           "position": 1,
           "description": "Tender, Spicy and Juicy. Original or Peri-Crusted",
-          "images": [],
+          "images": "appeteasers.jpg",
           "sub-items": [
             {
               "id": "224471",
@@ -172,6 +173,7 @@
       "id": "26582",
       "name": "Fino sides",
       "position": "0",
+      "images": "fino-side.jpg",
       "menu-items": [
         {
           "id": "94334",
@@ -253,6 +255,7 @@
       "id": "26588",
       "name": "Peri-peri chicken",
       "position": "0",
+      "images": "peri-peri-chicken.jpg",
       "menu-items": [
         {
           "id": "94349",
@@ -663,6 +666,7 @@
       "id": "26594",
       "name": "Sharing platters",
       "position": "0",
+      "images": "sharing-platters.jpg",
       "menu-items": [
         {
           "id": "94379",
@@ -767,6 +771,7 @@
       "id": "26600",
       "name": "Dessert",
       "position": "0",
+      "images": "dessert.jpg",
       "menu-items": [
         {
           "id": "94399",
@@ -811,6 +816,7 @@
       "id": "26579",
       "name": "Sides",
       "position": "0",
+      "images": "sides.jpg",
       "menu-items": [
         {
           "id": "94319",
@@ -1003,6 +1009,7 @@
       "id": "26585",
       "name": "Salads",
       "position": "0",
+      "images": "salads.jpg",
       "menu-items": [
         {
           "id": "94340",
@@ -1079,6 +1086,7 @@
       "id": "26591",
       "name": "Try someting new",
       "position": "0",
+      "images": "cataplana-algarve.jpg",
       "menu-items": [
         {
           "id": "94376",
@@ -1109,6 +1117,7 @@
       "id": "26597",
       "name": "Burgers, pitas, wraps",
       "position": "0",
+      "images": "burgers-pitas-wraps.jpg",
       "menu-items": [
         {
           "id": "94388",

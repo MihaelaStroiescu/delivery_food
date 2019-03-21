@@ -6,6 +6,8 @@ import GoogleLogin from 'react-google-login';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import ModalLogin from './ModalLogin';
+import { Container, Row, Col, Image,Button, ButtonToolbar } from 'react-bootstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -17,21 +19,22 @@ class Login extends Component {
         name: '',
         email: '',
         password: '',
-        redirect: false
+        redirect: false,
+        modalShow: false
       };    
   }
 
   async componentDidMount() {
-    const resp = await axios.post(this.apiUrl, { admin:
+    // const resp = await axios.post(this.apiUrl, {admin:
      
-        { 
-          id:1,
-          name: 'Daniel',
-          email: "ancutadaniel@gmail.com",
-          password: 'Start1234?'
-        }     
-      
-    });
+    //     { 
+    //       id:1,
+    //       name: 'Daniel',
+    //       email: "ancutadaniel@gmail.com",
+    //       password: 'Start1234?'
+    //     }     
+    
+    // });
 
     const newResp = await axios.get(this.apiUrl); 
       this.setState({admin: newResp.data});
@@ -64,30 +67,35 @@ class Login extends Component {
       if (this.state.redirect === true) {
         return <Redirect to='/' />
       }
+      let modalClose = () => this.setState({ modalShow: false });
       return (
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
             <div className="App">
                 <h2>Welcome, {user.name}</h2>
+              <ButtonToolbar>
+                <Button
+                  variant="primary"
+                  onClick={() => this.setState({ modalShow: true })}
+                >
+                 Log In
+              </Button>
+
+                <ModalLogin
+                  show={this.state.modalShow}
+                  onHide={modalClose}
+                />
+              </ButtonToolbar>                
                 <div>
-                  {this.state.admin.map( admin => <p>{admin.id}</p>)}
-                  
-                </div>
-                <FacebookLogin
-                    appId="1992350001069404" //APP ID NOT CREATED YET
-                    fields="name,email,picture"
-                    callback={this.responseFacebook}
-                />
-                <br />
-                <br />
-                <GoogleLogin
-                    clientId="903697692149-j4q2rsmltp40gik0lb4ciqk3m9d59e4k.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
-                    buttonText="LOGIN WITH GOOGLE"
-                    onSuccess={this.responseGoogle}
-                    onFailure={this.responseGoogle}
-                />
+
+                  {this.state.admin.map( admin => <p>{admin.id}</p>)}                  
+                </div>              
 
             </div>
+
+
+
+
           ) }
           </UserContext.Consumer>
     );

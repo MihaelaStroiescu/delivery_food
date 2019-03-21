@@ -1,4 +1,4 @@
-﻿{
+{
   "menu": [
     {
       "id": "26576",
@@ -1324,6 +1324,24 @@
           ]
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 1
+    },
+    {
+      "email": "ancutadaniel@gmail.com",
+      "password": "kkkk",
+      "id": 2
+    },
+    {
+      "email": "ancutadaniel@gmail.com",
+      "password": "kkkk",
+      "id": 3
     }
   ]
 }

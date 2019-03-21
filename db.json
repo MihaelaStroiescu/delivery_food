@@ -1324,33 +1324,24 @@
           ]
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 1
     },
     {
-      "admin": {
-        "id": 1,
-        "name": "Daniel",
-        "email": "ancutadaniel@gmail.com",
-        "password": "Start1234?"
-      },
-      "id": "n8oB3BF"
+      "email": "ancutadaniel@gmail.com",
+      "password": "kkkk",
+      "id": 2
     },
     {
-      "admin": {
-        "id": 1,
-        "name": "Daniel",
-        "email": "ancutadaniel@gmail.com",
-        "password": "Start1234?"
-      },
-      "id": "4uyHYXY"
-    },
-    {
-      "admin": {
-        "id": 1,
-        "name": "Daniel",
-        "email": "ancutadaniel@gmail.com",
-        "password": "Start1234?"
-      },
-      "id": "mQqUXMH"
+      "email": "ancutadaniel@gmail.com",
+      "password": "kkkk",
+      "id": 3
     }
   ]
 }

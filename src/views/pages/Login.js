@@ -12,10 +12,9 @@ import { Container, Row, Col, Image,Button, ButtonToolbar } from 'react-bootstra
 class Login extends Component {
   constructor(props) {
       super(props); 
-      this.apiUrl = "http://localhost:3004/menu";
+      this.apiUrl = "http://localhost:3004/users";
       this.state = {
-        admin: [],
-        id: 1,
+        id: 0,
         name: '',
         email: '',
         password: '',
@@ -25,20 +24,14 @@ class Login extends Component {
   }
 
   async componentDidMount() {
-    // const resp = await axios.post(this.apiUrl, {admin:
-     
-    //     { 
-    //       id:1,
-    //       name: 'Daniel',
-    //       email: "ancutadaniel@gmail.com",
-    //       password: 'Start1234?'
-    //     }     
-    
-    // });
+    const resp = await axios.post(this.apiUrl, { 
+          name: 'Daniel',
+          email: "ancutadaniel@gmail.com",
+          password: 'Start1234?'
+    });
 
-    const newResp = await axios.get(this.apiUrl); 
-      this.setState({admin: newResp.data});
-      console.log(newResp.data);
+    console.log(resp.data);
+    this.setState(resp.data);
   }
 
 
@@ -88,7 +81,7 @@ class Login extends Component {
               </ButtonToolbar>                
                 <div>
 
-                  {this.state.admin.map( admin => <p>{admin.id}</p>)}                  
+                  <p>{JSON.stringify(this.state)}</p>                 
                 </div>              
 
             </div>

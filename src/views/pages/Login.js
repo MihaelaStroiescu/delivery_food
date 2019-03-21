@@ -5,15 +5,41 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
-    super(props);
-
-    this.state = {
-      redirect: false
-    }
+      super(props); 
+      this.apiUrl = "http://localhost:3004/menu";
+      this.state = {
+        admin: [],
+        id: 1,
+        name: '',
+        email: '',
+        password: '',
+        redirect: false
+      };    
   }
+
+  async componentDidMount() {
+    const resp = await axios.post(this.apiUrl, { admin:
+     
+        { 
+          id:1,
+          name: 'Daniel',
+          email: "ancutadaniel@gmail.com",
+          password: 'Start1234?'
+        }     
+      
+    });
+
+    const newResp = await axios.get(this.apiUrl); 
+      this.setState({admin: newResp.data});
+      console.log(newResp.data);
+  }
+
+
+
   responseFacebook = (response) => {
     //console.log(response);
     console.log(this.context);
@@ -32,6 +58,8 @@ class Login extends Component {
     });
   }
 
+  
+
   render() {
       if (this.state.redirect === true) {
         return <Redirect to='/' />
@@ -40,8 +68,11 @@ class Login extends Component {
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
             <div className="App">
-                <h2>LOGIN WITH:</h2>
-
+                <h2>Welcome, {user.name}</h2>
+                <div>
+                  {this.state.admin.map( admin => <p>{admin.id}</p>)}
+                  
+                </div>
                 <FacebookLogin
                     appId="1992350001069404" //APP ID NOT CREATED YET
                     fields="name,email,picture"

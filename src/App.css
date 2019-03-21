@@ -1,5 +1,6 @@
 :root {
   font-family: 'Open Sans',Arial,sans-serif;
+
 }
 .App {
   text-align: center;
@@ -25,6 +26,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.navbar-dark.bg-dark {
+    background-color: #4a6ee7!important;
 }
 
 @keyframes App-logo-spin {

@@ -1342,6 +1342,42 @@
       "email": "ancutadaniel@gmail.com",
       "password": "kkkk",
       "id": 3
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 4
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 5
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 6
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 7
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 8
+    },
+    {
+      "name": "Daniel",
+      "email": "ancutadaniel@gmail.com",
+      "password": "Start1234?",
+      "id": 9
     }
   ]
 }

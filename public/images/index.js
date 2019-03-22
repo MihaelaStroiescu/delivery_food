@@ -12,6 +12,8 @@ import start_homepage_one from './start-homepage-one.jpg';
 import bottle from './bottle.png';
 import phone from './phone.png';
 import trophy from './trophy.png';
+import shadow from './shadow.png';
+import about_us from './about-us.jpg'
 
 
 export {
@@ -28,5 +30,7 @@ export {
     start_homepage_one,
     bottle,
     phone,
-    trophy
+    trophy,
+    shadow,
+    about_us
      };

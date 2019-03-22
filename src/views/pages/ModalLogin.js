@@ -1,20 +1,14 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
-import ModalDialog from 'react-bootstrap/ModalDialog';
-import ModalHeader from 'react-bootstrap/ModalHeader';
-import ModalTitle from 'react-bootstrap/ModalTitle';
-import ModalBody from 'react-bootstrap/ModalBody';
-import ModalFooter from 'react-bootstrap/ModalFooter';
-import  { Button , Form ,  } from 'react-bootstrap';
+import  { Button , Form  } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
-import { FormGroup } from 'react-bootstrap';
 import axios from 'axios';
 
 
 class ModalLogin extends React.Component {
-    constructor(props) {
-        super(props); 
+    constructor(...args) {
+        super(...args); 
         this.apiUrl = "http://localhost:3004/users";
         this.state = {
           id: 0, 
@@ -23,7 +17,8 @@ class ModalLogin extends React.Component {
           email: '',
           password: '',
           redirect: false,
-          modalShow: false
+          modalShow: false,
+          validated: false
         };
         
         this.inputChanged = this.inputChanged.bind(this);
@@ -31,14 +26,14 @@ class ModalLogin extends React.Component {
     }
   
     async componentDidMount() {
-      const resp = await axios.post(this.apiUrl, { 
-            name: 'Daniel',
-            email: "ancutadaniel@gmail.com",
-            password: 'Start1234?'
-      });
+    //   const resp = await axios.post(this.apiUrl, { 
+    //         name: 'Daniel',
+    //         email: "ancutadaniel@gmail.com",
+    //         password: 'Start1234?'
+    //   });
   
-      console.log(resp.data);
-      this.setState(resp.data);
+    //   console.log(resp.data);
+    //   this.setState(resp.data);
     }
   
     inputChanged(e) {
@@ -49,49 +44,58 @@ class ModalLogin extends React.Component {
   
       this.setState({user});
     }
+
+    
     async formSubmit(e) {
-        e.preventDefault();
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        this.setState({ validated: true });
         
         console.log(this.state.user);
         const resp =  await axios.post(this.apiUrl, this.state.user);
-      console.log(resp);
+        console.log(resp);
     } 
 
     render() {
+        const { validated } = this.state;
         return (
-            <Modal
-            {...this.props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
+            <Modal {...this.props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Log in to your account
-              </Modal.Title>
+                    </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>                  
-                    
-                        <Form onSubmit={this.formSubmit}>                       
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control id="email" type="email" value={this.state.user.email}  onChange={this.inputChanged} placeholder="Enter email"  />
-                                 
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
-                                </Form.Text>
-                            </Form.Group>
-
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control id="password" type="password" value={this.state.user.password}  onChange={this.inputChanged} placeholder="Password" />
-                            </Form.Group>
-                            <Form.Group controlId="formBasicChecbox">
-                                <Form.Check type="checkbox" label="Keep me logged in to my account" />
-                            </Form.Group>
-                            <Button type="submit" variant="outline-secondary">Submit</Button>
-                            
-                        </Form>
+                <Modal.Body>                
+                    <Form noValidate validated= {validated} onSubmit={e => this.formSubmit(e)} >
+                        <Form.Group controlId="validationCustom01">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control required id="name" type="text" value={this.state.user.name} onChange={this.inputChanged} placeholder="Name" />
+                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
+                        </Form.Group>                       
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control required id="email" type="email" value={this.state.user.email}  onChange={this.inputChanged} placeholder="Enter email"  />
+                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Please provide a valid email.</Form.Control.Feedback>
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control required id="password" type="password" value={this.state.user.password}  onChange={this.inputChanged} placeholder="Password" />
+                            <Form.Control.Feedback>Super Password!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">Please set a strong password.</Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicChecbox">
+                            <Form.Check type="checkbox" label="Keep me logged in to my account" />
+                        </Form.Group>
+                        <Button type="submit" variant="outline-secondary">Submit</Button>
+                     </Form>
                         <FacebookLogin
                             appId="1992350001069404" //APP ID NOT CREATED YET
                             fields="name,email,picture"
@@ -112,10 +116,6 @@ class ModalLogin extends React.Component {
                     <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
-
-
-
-
         );
     }
 }

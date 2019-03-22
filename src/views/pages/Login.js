@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import '../../Login.css';
-import FacebookLogin from 'react-facebook-login';
-import GoogleLogin from 'react-google-login';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import ModalLogin from './ModalLogin';
-import { Container, Row, Col, Image,Button, ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 
 class Login extends Component {
   constructor(props) {
@@ -15,6 +13,7 @@ class Login extends Component {
       this.apiUrl = "http://localhost:3004/users";
       this.state = {
         id: 0,
+        user: {},
         name: '',
         email: '',
         password: '',
@@ -24,14 +23,14 @@ class Login extends Component {
   }
 
   async componentDidMount() {
-    const resp = await axios.post(this.apiUrl, { 
-          name: 'Daniel',
-          email: "ancutadaniel@gmail.com",
-          password: 'Start1234?'
-    });
+    // const resp = await axios.post(this.apiUrl, { 
+    //       name: 'Daniel',
+    //       email: "ancutadaniel@gmail.com",
+    //       password: 'Start1234?'
+    // });
 
-    console.log(resp.data);
-    this.setState(resp.data);
+    // console.log(resp.data);
+    // this.setState(resp.data);
   }
 
 
@@ -67,28 +66,13 @@ class Login extends Component {
             <div className="App">
                 <h2>Welcome, {user.name}</h2>
               <ButtonToolbar>
-                <Button
-                  variant="primary"
-                  onClick={() => this.setState({ modalShow: true })}
-                >
-                 Log In
-              </Button>
-
-                <ModalLogin
-                  show={this.state.modalShow}
-                  onHide={modalClose}
-                />
+                <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
+                <ModalLogin show={this.state.modalShow} onHide={modalClose} />
               </ButtonToolbar>                
                 <div>
-
                   <p>{JSON.stringify(this.state)}</p>                 
-                </div>              
-
+                </div>           
             </div>
-
-
-
-
           ) }
           </UserContext.Consumer>
     );

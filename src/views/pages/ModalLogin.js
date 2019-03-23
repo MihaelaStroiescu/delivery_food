@@ -4,6 +4,7 @@ import  { Button , Form  } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import axios from 'axios';
+import UserContext from '../../shared/user.context';
 
 
 class ModalLogin extends React.Component {
@@ -26,22 +27,26 @@ class ModalLogin extends React.Component {
     }
   
     async componentDidMount() {
-    //   const resp = await axios.post(this.apiUrl, { 
-    //         name: 'Daniel',
-    //         email: "ancutadaniel@gmail.com",
-    //         password: 'Start1234?'
-    //   });
+    //   const resp = await axios.post(this.apiUrl);
   
     //   console.log(resp.data);
     //   this.setState(resp.data);
     }
   
-    inputChanged(e) {
+     inputChanged(e) {
       const value = e.currentTarget.value;
       const user = this.state.user;
-  
+      const resp =  axios.get(this.apiUrl);      
+      console.log(user.name); 
+      console.log(resp.data); 
+      if (user.name === resp.data)  {
+        alert('user exist');
+      } 
+      
       user[e.currentTarget.id] = value;
-  
+
+       
+             
       this.setState({user});
     }
 
@@ -54,18 +59,21 @@ class ModalLogin extends React.Component {
         }
         this.setState({ validated: true });
         
-        console.log(this.state.user);
+        //console.log(this.state.user);
         const resp =  await axios.post(this.apiUrl, this.state.user);
-        console.log(resp);
+       // console.log(resp);
     } 
 
     render() {
         const { validated } = this.state;
         return (
+            <UserContext.Consumer>
+          { ({ user, handleUserChange }) => (
+              
             <Modal {...this.props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Log in to your account
+                        Log in to your account 
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>                
@@ -116,6 +124,8 @@ class ModalLogin extends React.Component {
                     <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
+            ) }
+            </UserContext.Consumer>
         );
     }
 }

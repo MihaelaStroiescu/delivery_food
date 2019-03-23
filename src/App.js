@@ -33,7 +33,7 @@ class App extends  React.Component {
 
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
-              {/* <Route exact path="/login" component={ Login } /> */}
+              <Route exact path="/login" component={ Login } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
               
           </div>

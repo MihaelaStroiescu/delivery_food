@@ -32,9 +32,9 @@ class MainMenu extends React.Component {
                         <LinkContainer to="/order">
                             <Nav.Link>Order</Nav.Link>
                         </LinkContainer>                        
-                        {/* <LinkContainer to="/login">
+                        <LinkContainer to="/login">
                             <Nav.Link>Login</Nav.Link>
-                        </LinkContainer> */}
+                        </LinkContainer>
                     </Nav>
                     <ButtonToolbar>
                             <Button variant="info" onClick={() => this.setState({ modalShow: true })}> Log In </Button>

@@ -6,6 +6,8 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import ModalLogin from './ModalLogin';
 import { Button, ButtonToolbar } from 'react-bootstrap';
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
 
 class Login extends Component {
   constructor(props) {
@@ -18,22 +20,21 @@ class Login extends Component {
         email: '',
         password: '',
         redirect: false,
-        modalShow: false
+        modalShow: false,
+        userExist: []
       };    
   }
 
   async componentDidMount() {
-    // const resp = await axios.post(this.apiUrl, { 
-    //       name: 'Daniel',
-    //       email: "ancutadaniel@gmail.com",
-    //       password: 'Start1234?'
-    // });
+    const resp = await axios.get(this.apiUrl);
 
-    // console.log(resp.data);
-    // this.setState(resp.data);
+    console.log(resp.data);
+    this.setState({userExist: resp.data});
   }
 
-
+   checkuser(userExist) {
+     console.log({userExist});
+   }
 
   responseFacebook = (response) => {
     //console.log(response);
@@ -58,8 +59,9 @@ class Login extends Component {
   render() {
       if (this.state.redirect === true) {
         return <Redirect to='/' />
-      }
+      }      
       let modalClose = () => this.setState({ modalShow: false });
+      
       return (
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
@@ -70,7 +72,22 @@ class Login extends Component {
                 <ModalLogin show={this.state.modalShow} onHide={modalClose} />
               </ButtonToolbar>                
                 <div>
-                  <p>{JSON.stringify(this.state)}</p>                 
+                  <p>{JSON.stringify(this.state)}</p>  
+                  <p>{ this.state.userExist.map(user => user.name)}</p> 
+                  
+                  <FacebookLogin
+                      appId="1992350001069404" //APP ID NOT CREATED YET
+                      fields="name,email,picture"
+                      callback={this.responseFacebook}
+                  />
+                  <br />
+                  <br />
+                  <GoogleLogin
+                      clientId="903697692149-j4q2rsmltp40gik0lb4ciqk3m9d59e4k.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
+                      buttonText="LOGIN WITH GOOGLE"
+                      onSuccess={this.responseGoogle}
+                      onFailure={this.responseGoogle}
+                  />
                 </div>           
             </div>
           ) }

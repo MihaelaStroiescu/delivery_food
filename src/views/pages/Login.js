@@ -12,7 +12,7 @@ import GoogleLogin from 'react-google-login';
 
 class Login extends Component {
   constructor(props) {
-      super(props); 
+      super(props);
       this.apiUrl = "http://localhost:3004/users";
       this.state = {
         id: 0,
@@ -23,7 +23,7 @@ class Login extends Component {
         redirect: false,
         modalShow: false,
         userExist: []
-      };    
+      };
   }
 
   async componentDidMount() {
@@ -54,14 +54,14 @@ class Login extends Component {
     });
   }
 
-  
+
 
   render() {
       if (this.state.redirect === true) {
         return <Redirect to='/' />
-      }      
+      }
       let modalClose = () => this.setState({ modalShow: false });
-      
+
       return (
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
@@ -70,12 +70,12 @@ class Login extends Component {
               <ButtonToolbar>
                 <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                 <ModalLogin show={this.state.modalShow} onHide={modalClose} />
-              </ButtonToolbar>                
+              </ButtonToolbar>
                 <div>
-                  {/* <p>{JSON.stringify(this.state)}</p>   */} 
-                  
-                  <p>{ this.state.userExist.map(user => user.name)}</p> 
-                  
+                  {/* <p>{JSON.stringify(this.state)}</p>   */}
+
+                  <p>{ this.state.userExist.map(user => user.name)}</p>
+
                   <FacebookLogin
                       appId="1992350001069404" //APP ID NOT CREATED YET
                       fields="name,email,picture"
@@ -90,7 +90,7 @@ class Login extends Component {
                       onFailure={this.responseGoogle}
                   />
                 </div>
-                         
+
             </div>
           ) }
           </UserContext.Consumer>

@@ -108,6 +108,7 @@ class HomePage extends React.Component {
                 </Row>
                 </Container>
             </div>
+           
             </>
             )}
             </UserContext.Consumer>

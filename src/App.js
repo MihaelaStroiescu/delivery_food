@@ -36,11 +36,11 @@ class App extends  React.Component {
               <Route exact path="/order" component={ Order } />
               <Route exact path="/login" component={ Login } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
+              <Footer site_name="Your Menu"/>
 
-          </div>
-          <div>
-            <Footer site_name="Your Menu"/>
-          </div>
+
+
+          </div>          
         </UserContext.Provider>
     </BrowserRouter>
     );

@@ -5,7 +5,7 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import axios from 'axios';
 import UserContext from '../../shared/user.context';
-
+import { Redirect } from 'react-router-dom';
 
 
 class ModalLogin extends React.Component {
@@ -21,54 +21,50 @@ class ModalLogin extends React.Component {
           checkUser: '',
           redirect: false,
           modalShow: false,
-          validated: false
+          validated: false,
+          isValid: true
         };
 
         this.inputChanged = this.inputChanged.bind(this);
         this.formSubmit = this.formSubmit.bind(this);
     }
 
-    async componentDidMount() {
-
-    }
-
-
-
-
 
      async inputChanged(e) {
       const value = e.currentTarget.value;
       const user = this.state.user;
-      const url = this.apiUrl + "/?name=" + value;
-
-
       user[e.currentTarget.id] = value;
-      const checkUser = (await axios.get(url)).data;
-      //console.log(checkUser);
-      this.setState({user, checkUser});
+      this.setState({user});
     }
 
 
     async formSubmit(e) {
-        const form = e.currentTarget;
+        e.preventDefault();
 
+        const form = e.currentTarget;
+        const url = this.apiUrl + "/?name=" + this.state.user.name + '&password=' + this.state.user.password;
         if (form.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
+           return;
         }
+
         this.setState({ validated: true });
 
         //console.log(this.state.user);
-       const resp =  await axios.post(this.apiUrl, this.state.user);
-       console.log(resp);
+       const resp =  await axios.get(url);
+       if(resp.data[0]) {
+           this.setState ({redirect: true});
+           this.context.handleUserChange(resp.data[0]);
+       } else {
+           this.setState({validated: false, isValid: false})
+       }
     }
 
     render() {
+        if (this.state.redirect === true) {
+            return <Redirect to='/' />
+        }
         const { validated } = this.state;
         return (
-            <UserContext.Consumer>
-          { ({ user, handleUserChange }) => (
-
             <Modal {...this.props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
@@ -82,7 +78,6 @@ class ModalLogin extends React.Component {
                             <Form.Control required id="name" type="text" value={this.state.user.name} onChange={this.inputChanged} placeholder="Name" />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
-
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email address</Form.Label>
@@ -104,6 +99,7 @@ class ModalLogin extends React.Component {
                         </Form.Group>
                         <Button type="submit" variant="outline-secondary">Submit</Button>
                      </Form>
+                     {!this.state.isValid ? 'Mesaj eroare' : ''}
                      <p className="facebook"><FacebookLogin appId="1992350001069404" fields="name,email,picture" callback={this.responseFacebook}/></p>
                      <p className="google"> <GoogleLogin clientId="903697692149-j4q2rsmltp40gik0lb4ciqk3m9d59e4k.apps.googleusercontent.com" onSuccess={this.responseGoogle} onFailure={this.responseGoogle}/></p>
 
@@ -115,10 +111,9 @@ class ModalLogin extends React.Component {
                     <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
-            ) }
-            </UserContext.Consumer>
         );
     }
 }
+ModalLogin.contextType = UserContext;
 
 export default ModalLogin;

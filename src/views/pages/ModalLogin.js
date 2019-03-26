@@ -8,11 +8,11 @@ import axios from 'axios';
 
 class ModalLogin extends React.Component {
     constructor(...args) {
-        super(...args); 
+        super(...args);
         this.apiUrl = "http://localhost:3004/users";
         this.state = {
-          id: 0, 
-          user: {},       
+          id: 0,
+          user: {},
           name: '',
           email: '',
           password: '',
@@ -20,32 +20,30 @@ class ModalLogin extends React.Component {
           modalShow: false,
           validated: false
         };
-        
+
         this.inputChanged = this.inputChanged.bind(this);
         this.formSubmit = this.formSubmit.bind(this);
     }
-  
+
     async componentDidMount() {
-    //   const resp = await axios.post(this.apiUrl, { 
+    //   const resp = await axios.post(this.apiUrl, {
     //         name: 'Daniel',
     //         email: "ancutadaniel@gmail.com",
     //         password: 'Start1234?'
     //   });
-  
+
     //   console.log(resp.data);
     //   this.setState(resp.data);
     }
-  
+
     inputChanged(e) {
       const value = e.currentTarget.value;
       const user = this.state.user;
-  
       user[e.currentTarget.id] = value;
-  
       this.setState({user});
     }
 
-    
+
     async formSubmit(e) {
         const form = e.currentTarget;
         if (form.checkValidity() === false) {
@@ -53,11 +51,11 @@ class ModalLogin extends React.Component {
             e.stopPropagation();
         }
         this.setState({ validated: true });
-        
+
         console.log(this.state.user);
         const resp =  await axios.post(this.apiUrl, this.state.user);
         console.log(resp);
-    } 
+    }
 
     render() {
         const { validated } = this.state;
@@ -68,14 +66,14 @@ class ModalLogin extends React.Component {
                         Log in to your account
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>                
+                <Modal.Body>
                     <Form noValidate validated= {validated} onSubmit={e => this.formSubmit(e)} >
                         <Form.Group controlId="validationCustom01">
                             <Form.Label>Name</Form.Label>
                             <Form.Control required id="name" type="text" value={this.state.user.name} onChange={this.inputChanged} placeholder="Name" />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
-                        </Form.Group>                       
+                        </Form.Group>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control required id="email" type="email" value={this.state.user.email}  onChange={this.inputChanged} placeholder="Enter email"  />
@@ -109,7 +107,7 @@ class ModalLogin extends React.Component {
                             onSuccess={this.responseGoogle}
                             onFailure={this.responseGoogle}
                         />
-                 
+
                     <p>New to YourMenu.menu?<span> <Button variant="outline-secondary">Sign up here</Button></span></p>
                 </Modal.Body>
                 <Modal.Footer>

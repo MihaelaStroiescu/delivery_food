@@ -1,6 +1,6 @@
 import React from 'react';
 import UserContext from '../../shared/user.context';
-import { logo, appeteasers, fino_side, peri_peri_chicken, sharing_platters, dessert, sides, cataplana_algarve, salads, burgers_pitas_wraps } from '../../images/index.js';
+import { logo } from '../../images/index.js';
 import '../../App.css';
 import '../../Order.css';
 import axios from 'axios';
@@ -42,8 +42,8 @@ class Order extends React.Component {
                                  {this.state.category.map(categ =>
                                     <Col sm={4} className="categ">
                                         <Link to={"/ordermenu/" + categ.id}>
-                                                <span className="name_categ">{categ.name}</span>                                           
-                                            <Image src={"images/" + categ.images} alt="" name={categ.name} title={categ.name} fluid/> 
+                                                <span className="name_categ">{categ.name}</span>
+                                            <Image src={"images/" + categ.images} alt="" name={categ.name} title={categ.name} fluid/>
                                         </Link>
                                     </Col>
                                 )}

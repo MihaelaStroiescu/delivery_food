@@ -7,7 +7,7 @@ import ModalLogin from '../views/pages/ModalLogin';
 
 class MainMenu extends React.Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
             modalShow: false
         };
@@ -31,16 +31,16 @@ class MainMenu extends React.Component {
                         </LinkContainer>
                         <LinkContainer to="/order">
                             <Nav.Link>Order</Nav.Link>
-                        </LinkContainer>                        
-                        {/* <LinkContainer to="/login">
+                        </LinkContainer>
+                        <LinkContainer to="/login">
                             <Nav.Link>Login</Nav.Link>
-                        </LinkContainer> */}
+                        </LinkContainer>
                     </Nav>
                     <ButtonToolbar>
                             <Button variant="info" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                             <ModalLogin show={this.state.modalShow} onHide={modalClose} />
                     </ButtonToolbar>
-                    {/* <Form inline>                              
+                    {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
                     </Form> */}

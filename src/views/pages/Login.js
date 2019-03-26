@@ -9,7 +9,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 
 class Login extends Component {
   constructor(props) {
-      super(props); 
+      super(props);
       this.apiUrl = "http://localhost:3004/users";
       this.state = {
         id: 0,
@@ -18,20 +18,23 @@ class Login extends Component {
         email: '',
         password: '',
         redirect: false,
-        modalShow: false
-      };    
+        modalShow: false,
+        userExit: []
+      };
   }
 
   async componentDidMount() {
-    // const resp = await axios.post(this.apiUrl, { 
-    //       name: 'Daniel',
-    //       email: "ancutadaniel@gmail.com",
-    //       password: 'Start1234?'
-    // });
-
-    // console.log(resp.data);
-    // this.setState(resp.data);
+    const resp = await axios.get(this.apiUrl)
+    console.log(resp.data);
+    this.setState({userExit: resp.data});
   }
+
+  //     checkUser(user) {
+  //       console.log(user.name);
+
+  //     }
+  // checkUser()
+
 
 
 
@@ -53,7 +56,7 @@ class Login extends Component {
     });
   }
 
-  
+
 
   render() {
       if (this.state.redirect === true) {
@@ -68,10 +71,11 @@ class Login extends Component {
               <ButtonToolbar>
                 <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                 <ModalLogin show={this.state.modalShow} onHide={modalClose} />
-              </ButtonToolbar>                
+              </ButtonToolbar>
                 <div>
-                  <p>{JSON.stringify(this.state)}</p>                 
-                </div>           
+                  <p>{JSON.stringify(this.state)}</p>
+                  <p>{this.state.userExit.map(user => user.name) }</p>
+                </div>
             </div>
           ) }
           </UserContext.Consumer>

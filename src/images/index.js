@@ -14,6 +14,9 @@ import phone from './phone.png';
 import trophy from './trophy.png';
 import shadow from './shadow.png';
 import about_us from './about-us.jpg'
+import about_us1 from './about-us1.jpg'
+import miha from './miha.jpg'
+import dan from './dan.jpg'
 
 
 
@@ -33,5 +36,8 @@ export {
     phone,
     trophy,
     // shadow
+    about_us1,
     about_us,
+    miha,
+    dan
      };

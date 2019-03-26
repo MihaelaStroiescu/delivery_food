@@ -2,7 +2,7 @@ import React  from 'react';
 
 import UserContext from '../../shared/user.context';
 import { logo, bottle, phone, trophy, about_us } from '../../images/index.js';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Form, Button, FormControl } from 'react-bootstrap';
 import '../../App.css';
 import '../../Homepage.css';
 
@@ -25,7 +25,11 @@ class HomePage extends React.Component {
             <div className="wrapper_homepage">
                 <section className="homepage_intro">
                 <div className="homepage_user">
-                    <p>Welcome, {user.name}</p>
+                    <p>Welcome {user.name}</p>
+                     <Form inline>                              
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
                 </div>
                 </section>
                 <Container className="homepage_middle">

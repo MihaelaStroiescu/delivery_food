@@ -1,42 +1,42 @@
-.wrapper_main {
-  margin: auto;
-  width: 80%;
+.logo_container, .logo_container .App-header {
+  background-color: #f2f2f2;
 }
-.categ {
-  padding-bottom: 15px;
-  padding-top: 15px;
+.logo_container h3 {
+  margin: 0px;
 }
 
-.name_categ {
-  position: absolute;
-  color: #fff;
-  font-size: 1.4667rem;
-  text-align: left;
-  bottom: 50px;
-  left: 50px;
-  z-index: 1;
-  text-shadow: 2px 1px 2px rgba(0,0,0,.5);
+.App .categ_container {
+  padding: 100px;
+  background-color: #f2f2f2;
 }
 
-
-.menu {
+.App .categ { 
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 65px;
+}
+.App .card {
+  transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, box-shadow 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
 
 }
-
-.menu_options img{
-  position: relative;
-  width: auto;
-  padding: 10px 0;
+ 
+.App .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px 0px;
+  transform: translateY(-5px);
+  
 }
-
-.menu_options .seoImageTile__title {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 99;
-  font-size: 25px;
-  font-weight: bold;
-  /* color: white; */
+.categ a {
+  text-decoration: none!important;
+  color: #7e4134;
 }
+ 
+.categ a:hover {
+  text-decoration: none!important;
+  color: #28a745;
+}
+ @media (max-width: 576px) {
+  .App .categ_container {
+    padding: 100px 50px;
+  }
+ }

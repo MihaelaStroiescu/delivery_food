@@ -8,6 +8,10 @@ import ModalLogin from './ModalLogin';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import SimpleMap from './GoogleMap';
+
+
+
 
 class Login extends Component {
   constructor(props) {
@@ -27,18 +31,17 @@ class Login extends Component {
 
   async componentDidMount() {
     const resp = await axios.get(this.apiUrl);
-
     console.log(resp.data);
     this.setState({userExist: resp.data});
   }
 
    checkuser(userExist) {
-     console.log({userExist});
+     //console.log({userExist});
    }
 
   responseFacebook = (response) => {
     //console.log(response);
-    console.log(this.context);
+    //console.log(this.context);
     this.context.handleUserChange(response);
     this.setState({
       redirect: true
@@ -66,13 +69,14 @@ class Login extends Component {
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
             <div className="App">
-                <h2>Welcome, {user.name}</h2>
+                <h2>Welcome, {user.name} { this.state.userExist.map(user => user.name)}</h2>
               <ButtonToolbar>
                 <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                 <ModalLogin show={this.state.modalShow} onHide={modalClose} />
               </ButtonToolbar>                
                 <div>
-                  <p>{JSON.stringify(this.state)}</p>  
+                  {/* <p>{JSON.stringify(this.state)}</p>   */} 
+                  
                   <p>{ this.state.userExist.map(user => user.name)}</p> 
                   
                   <FacebookLogin
@@ -88,7 +92,8 @@ class Login extends Component {
                       onSuccess={this.responseGoogle}
                       onFailure={this.responseGoogle}
                   />
-                </div>           
+                </div>    
+                <SimpleMap></SimpleMap>          
             </div>
           ) }
           </UserContext.Consumer>

@@ -23,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App-header img {
+  margin-top: 50px;
+}
 
 .App-link {
   color: #61dafb;
@@ -39,4 +42,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+@media (max-width: 576px) {
+  .App-logo {height: 35vmin;}
 }

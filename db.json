@@ -1328,39 +1328,30 @@
   ],
   "users": [
     {
+      "name": "Daniel Ancuta",
+      "email": "AncutaDaniel@gmail.com",
       "id": 1
     },
     {
-      "email": "ancutadaniel@gmail.com",
-      "password": "test",
+      "name": "Daniel Ancuta",
+      "email": "AncutaDaniel@gmail.com",
+      "password": "123",
       "id": 2
     },
     {
+      "name": "Daniel Ancuta ",
+      "email": "AncutaDaniel@gmail.com",
+      "password": "test",
       "id": 3
     },
     {
+      "name": "Test ",
+      "email": "test@test.com",
+      "password": "123",
       "id": 4
     },
     {
-      "name": "tew",
-      "email": "ancutadaniel@gmail.com",
-      "password": "teset",
       "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "name": "da",
-      "email": "ancutadaniel@gmail.com",
-      "password": "1231",
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
     }
   ]
 }

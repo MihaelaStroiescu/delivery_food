@@ -5,7 +5,8 @@ import '../../App.css';
 import '../../Order.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Image} from 'react-bootstrap';
+import { Container, Row, Col, Card, CardDeck} from 'react-bootstrap';
+
 
 class Order extends React.Component {
     constructor(props) {
@@ -31,23 +32,35 @@ class Order extends React.Component {
                 <UserContext.Consumer>
                     {({ user }) => (
                         <>
-                        <Container>
+                        <Container fluid className="logo_container">
                             <header className="App-header">
                                 <img src={logo} className="App-logo" alt="menu" />
                             </header>
-                            <p>Welcome, {user.name}</p>
+                            <h3>Welcome {user.name}</h3>
                         </Container>
-                        <Container>
+                        <Container fluid className="categ_container">
                             <Row>
                                  {this.state.category.map(categ =>
-                                    <Col sm={4} className="categ">
-                                        <Link to={"/ordermenu/" + categ.id}>
-                                                <span className="name_categ">{categ.name}</span>
-                                            <Image src={"images/" + categ.images} alt="" name={categ.name} title={categ.name} fluid/>
-                                        </Link>
-                                    </Col>
+                                    <Col xl={3} md={6} xs={12} className="categ">
+                                     <CardDeck className="card_deck">
+                                             <Link to={"/ordermenu/" + categ.id}>
+                                                 <Card className="card">
+                                                     <Card.Img variant="top" src={"images/" + categ.images} />
+                                                     <Card.Body>
+                                                         <Card.Title>{categ.name}</Card.Title>
+                                                         <Card.Text>
+                                                         </Card.Text>
+                                                     </Card.Body>
+                                                     <Card.Footer>
+                                                            <p>Order Now!</p>
+                                                     </Card.Footer>
+                                                 </Card>
+                                             </Link>
+                                         </CardDeck>
+                                     </Col>
                                 )}
                             </Row>
+
                         </Container>
                     </>
                     )}

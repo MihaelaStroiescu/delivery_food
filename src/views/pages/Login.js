@@ -8,9 +8,6 @@ import ModalLogin from './ModalLogin';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
-import SimpleMap from './GoogleMap';
-
-
 
 
 class Login extends Component {
@@ -92,8 +89,8 @@ class Login extends Component {
                       onSuccess={this.responseGoogle}
                       onFailure={this.responseGoogle}
                   />
-                </div>    
-                <SimpleMap></SimpleMap>          
+                </div>
+                         
             </div>
           ) }
           </UserContext.Consumer>

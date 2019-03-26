@@ -6,7 +6,7 @@ import '../../Order.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, CardDeck} from 'react-bootstrap';
-import SimpleMap from './GoogleMap';
+
 
 class Order extends React.Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class Order extends React.Component {
                                      </Col> 
                                 )}
                             </Row>
-                            <Row> <SimpleMap></SimpleMap></Row>
+                           
                         </Container>
                     </>
                     )}

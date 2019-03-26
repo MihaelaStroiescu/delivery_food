@@ -3,13 +3,12 @@ import Order from './Order';
 import Login from './Login';
 import OrderMenu from './OrderMenu';
 import ModalLogin from './ModalLogin';
-import SimpleMap from './GoogleMap';
+
 
 export {
     Homepage,
     Order,
     Login,
     OrderMenu,
-    ModalLogin,
-    SimpleMap
+    ModalLogin    
 }

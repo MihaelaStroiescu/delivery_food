@@ -8,10 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, fas } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle, fab, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { Homepage, Order, Login, OrderMenu, ModalLogin } from './views/pages';
+import { Homepage, Order, SignUp, OrderMenu, ModalLogin } from './views/pages';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 library.add(fas, fab, faCheckSquare, faGoogle, faFacebook);
+
 
 class App extends  React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class App extends  React.Component {
               <MainMenu site_name="Your Menu App"/>
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
-              <Route exact path="/login" component={ Login } />
+              <Route exact path="/signup" component={ SignUp } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
           </div>
           <div>
@@ -48,7 +49,4 @@ class App extends  React.Component {
     );
   }
 }
-// export function FontAwesomeIcon(props) {
-//   return <i className="fa" />
-// }
 export default App;

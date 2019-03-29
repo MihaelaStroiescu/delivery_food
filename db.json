@@ -1330,58 +1330,14 @@
     {
       "name": "Daniel Ancuta",
       "email": "AncutaDaniel@gmail.com",
+      "password": "1231",
       "id": 1
     },
     {
-      "name": "Daniel Ancuta",
-      "email": "AncutaDaniel@gmail.com",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "name": "Daniel Ancuta ",
-      "email": "AncutaDaniel@gmail.com",
-      "password": "test",
-      "id": 3
-    },
-    {
-      "name": "Test ",
+      "name": "Alex",
       "email": "test@test.com",
-      "password": "123",
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "name": "asdfghjk",
-      "email": "dfg",
-      "password": "122",
-      "id": 6
-    },
-    {
-      "name": "asdfghjk23",
-      "email": "dfg",
-      "password": "122",
+      "password": "1231",
       "id": 7
-    },
-    {
-      "name": "1231",
-      "email": "dfg@y.ahoo.com",
-      "password": "122",
-      "id": 8
-    },
-    {
-      "name": "1223",
-      "email": "alabala@test.ro",
-      "password": "456",
-      "id": 9
-    },
-    {
-      "name": "122",
-      "email": "mihaela@stroiescu.ro",
-      "password": "123456",
-      "id": 10
     }
   ]
 }

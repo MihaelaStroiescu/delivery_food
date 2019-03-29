@@ -26,15 +26,14 @@ class MainMenu extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-
                         <LinkContainer exact to="/">
                             <Nav.Link>Home</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/order">
                             <Nav.Link>Order</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/login">
-                            <Nav.Link>Login</Nav.Link>
+                        <LinkContainer to="/signup">
+                            <Nav.Link>Sign Up</Nav.Link>
                         </LinkContainer>
                     </Nav>
                     <ButtonToolbar>

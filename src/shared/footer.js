@@ -1,7 +1,6 @@
 import React from 'react';
-//import UserContext from '../../shared/user.context';
 import { logo, miha, dan, about_us } from './../images/index.js';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../views/footer.css';

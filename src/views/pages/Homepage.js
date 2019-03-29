@@ -1,6 +1,5 @@
 import React  from 'react';
 import UserContext from '../../shared/user.context';
-import Footer from '../../shared/footer';
 import { logo, bottle, phone, trophy, about_us1 } from '../../images/index.js';
 import { Container, Row, Col, Image, Form, Button, FormControl } from 'react-bootstrap';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
@@ -100,12 +99,13 @@ class HomePage extends React.Component {
                                         lng: 25.5264224
                                     }} zoom={10}>
                         <Marker onClick={this.onMarkerClick} name={'Current location'} />
-                            <InfoWindow onClose={this.onInfoWindowClose}>
-                            </InfoWindow>
+                            {/* <InfoWindow onClose={this.onInfoWindowClose}>
+                            </InfoWindow> */}
                         </Map>
                         </div>
                     </Col>
                 </Row>
+
                 </Container>
             </div>
             </>
@@ -113,11 +113,10 @@ class HomePage extends React.Component {
             </UserContext.Consumer>
             </>
 
+
         );
     }
 }
-
-
 
 export default GoogleApiWrapper({
     apiKey: "AIzaSyA8IRQEYZiMYyOsk5SNapLmyprA5g_Ol1Y"

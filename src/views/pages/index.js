@@ -10,5 +10,6 @@ export {
     Order,
     Login,
     OrderMenu,
-    ModalLogin    
+    ModalLogin
+
 }

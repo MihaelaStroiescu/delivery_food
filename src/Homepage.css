@@ -18,7 +18,7 @@
   margin: 0px;
 }
 .navbar-brand p, .navbar-light .navbar-nav  a {
-  color: #9d5b49!important;  
+  color: #9d5b49!important;
 }
 .navbar-light .navbar-nav a.active, .navbar-light .navbar-nav a:hover {
   color: #28a745!important;
@@ -27,12 +27,9 @@
   margin-right: 100px;
 }
 
-
 .wrapper_homepage {
-  position: absolute;
-  top:0;
-  left:0;
-  right: 0;
+  position: relative;
+  margin-top: -140px;
 }
 
 .homepage_intro {
@@ -60,7 +57,7 @@
   padding: 45vh 0px;
   font-weight: bold;
   font-size: 2rem;
-  
+
 }
 .homepage_user .form-inline {
   justify-content: center;

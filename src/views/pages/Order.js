@@ -36,9 +36,11 @@ class Order extends React.Component {
                             <header className="App-header">
                                 <img src={logo} className="App-logo" alt="menu" />
                             </header>
-                            <h3>Welcome {user.name}</h3>
+                            <h3>Welcome, {user.name}</h3>
+                                <p className="order_paragraph">Hungry for Indian? Satisfy any craving with a few quick clicks and enjoy the wonderful world of delivery. Whether you’re at home, at work, or on the go, Your Menu lets you connect with your favorite local restaurants and easily discover new ones.</p>
                         </Container>
                         <Container fluid className="categ_container">
+
                             <Row>
                                  {this.state.category.map(categ =>
                                     <Col xl={3} md={6} xs={12} className="categ">

@@ -4,10 +4,8 @@ import '../../SignUp.css';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import ModalLogin from './ModalLogin';
-import { Button, ButtonToolbar } from 'react-bootstrap';
-import FacebookLogin from 'react-facebook-login';
-import GoogleLogin from 'react-google-login';
+import { Button, Form } from 'react-bootstrap';
+
 
 
 class SignUp extends React.Component {
@@ -20,25 +18,30 @@ class SignUp extends React.Component {
         name: '',
         email: '',
         password: '',
-        redirect: false,
-        modalShow: false,
+        redirect: false,        
+        validate: false,
         userExist: []
       };
+
+      this.inputChanged = this.inputChanged.bind(this);
+      this.formSubmit = this.formSubmit.bind(this);
   }
 
-  async componentDidMount() {
-    const resp = await axios.get(this.apiUrl);
+  async inputChanged(e) { // hot plate
+    const value = e.currentTarget.value;
+    const user = this.state.user;
+    user[e.currentTarget.id] = value;
+    this.setState({user});
+  }
+  
+  async formSubmit(e) {
+    e.preventDefault();
+    const resp =  await axios.post(this.apiUrl, this.state.user);
     console.log(resp.data);
-    this.setState({userExist: resp.data});
+    this.setState({validated: true, user: resp.data});
   }
-
-   checkuser(userExist) {
-     //console.log({userExist});
-   }
 
   responseFacebook = (response) => {
-    //console.log(response);
-    //console.log(this.context);
     this.context.handleUserChange(response);
     this.setState({
       redirect: true
@@ -59,39 +62,49 @@ class SignUp extends React.Component {
   render() {
       if (this.state.redirect === true) {
         return <Redirect to='/' />
-      }
-      let modalClose = () => this.setState({ modalShow: false });
-
+      }     
+      const {validated} = this.state;
       return (
         <UserContext.Consumer>
           { ({ user, handleUserChange }) => (
-            <div className="App">
-                <h2>Welcome, {user.name} { this.state.userExist.map(user => user.name)}</h2>
-              <ButtonToolbar>
-                <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
-                <ModalLogin show={this.state.modalShow} onHide={modalClose} />
-              </ButtonToolbar>
-                <div>
-                  {/* <p>{JSON.stringify(this.state)}</p>   */}
-
-                  <p>{ this.state.userExist.map(user => user.name)}</p>
-
-                  <FacebookLogin
-                      appId="1992350001069404" //APP ID NOT CREATED YET
-                      fields="name,email,picture"
-                      callback={this.responseFacebook}
-                  />
-                  <br />
-                  <br />
-                  <GoogleLogin
-                      clientId="903697692149-j4q2rsmltp40gik0lb4ciqk3m9d59e4k.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
-                      buttonText="LOGIN WITH GOOGLE"
-                      onSuccess={this.responseGoogle}
-                      onFailure={this.responseGoogle}
-                  />
-                </div>
-
-            </div>
+            <Form noValidate validated= {validated} onSubmit={e => this.formSubmit(e)} >
+            <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control required id="name" type="text" value={this.state.user.name} onChange={this.inputChanged} placeholder="Name" />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please enter a name.</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Email address</Form.Label>
+                <Form.Control required id="email" type="email" value={this.state.user.email}  onChange={this.inputChanged} placeholder="Enter email"  />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please provide a valid email.</Form.Control.Feedback>
+                <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                </Form.Text>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Password</Form.Label>
+                <Form.Control required id="password" type="password" value={this.state.user.password}  onChange={this.inputChanged} placeholder="Password" />
+                <Form.Control.Feedback>Super Password!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please set a strong password.</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+                <Form.Check id="formBasicChecbox" type="checkbox" label="Keep me logged in to my account" />
+            </Form.Group>
+            <Button type="submit" variant="outline-secondary">Login</Button>
+         </Form>
+            // <div className="App">
+            //     <h2>Welcome, {user.name} { this.state.userExist.map(user => user.name)}</h2>
+            //   {/* <ButtonToolbar>
+            //     <Button variant="primary" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
+            //     <ModalLogin show={this.state.modalShow} onHide={modalClose} />
+            //   </ButtonToolbar> */}
+            //     <div>
+            //       {/* <p>{JSON.stringify(this.state)}</p>   */}
+            //       <p>{ this.state.userExist.map(user => user.name)}</p>                  
+            //     </div>
+            // </div>
           ) }
           </UserContext.Consumer>
     );

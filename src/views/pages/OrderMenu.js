@@ -57,11 +57,8 @@ class OrderMenu extends React.Component {
                                     </Col>
                                 </Row>
                             </li>
-
                         )}
                     </ul>
-
-
                 </Container>
 
             </>

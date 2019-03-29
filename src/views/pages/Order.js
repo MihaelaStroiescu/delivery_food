@@ -43,7 +43,7 @@ class Order extends React.Component {
 
                             <Row>
                                  {this.state.category.map(categ =>
-                                    <Col xl={3} md={6} xs={12} className="categ">
+                                    <Col xl={3} md={6} xs={12} className="categ" key={categ}>
                                      <CardDeck className="card_deck">
                                              <Link to={"/ordermenu/" + categ.id}>
                                                  <Card className="card">

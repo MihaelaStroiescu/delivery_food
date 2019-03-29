@@ -1,7 +1,6 @@
 import React  from 'react';
 import UserContext from '../../shared/user.context';
-import Footer from '../../shared/footer';
-import { logo, bottle, phone, trophy, about_us1 } from '../../images/index.js';
+import { bottle, phone, trophy, about_us1 } from '../../images/index.js';
 import { Container, Row, Col, Image, Form, Button, FormControl } from 'react-bootstrap';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import '../../App.css';

@@ -4,8 +4,9 @@ import { BrowserRouter, Route} from 'react-router-dom';
 import MainMenu from './shared/mainMenu';
 import UserContext from './shared/user.context';
 import Footer from './shared/footer';
-import { Homepage, Order, Login, OrderMenu, ModalLogin } from './views/pages';
+import { Homepage, Order, SignUp, OrderMenu } from './views/pages';
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 class App extends  React.Component {
@@ -34,7 +35,7 @@ class App extends  React.Component {
 
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
-              <Route exact path="/login" component={ Login } />
+              <Route exact path="/signup" component={ SignUp } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
               <Footer site_name="Your Menu"/>
 

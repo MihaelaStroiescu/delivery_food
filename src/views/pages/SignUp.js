@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import '../../App.css';
-import '../../Login.css';
+import '../../SignUp.css';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -10,7 +10,7 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 
 
-class Login extends Component {
+class SignUp extends React.Component {
   constructor(props) {
       super(props);
       this.apiUrl = "http://localhost:3004/users";
@@ -98,6 +98,6 @@ class Login extends Component {
   }
 }
 
-Login.contextType = UserContext;
+SignUp.contextType = UserContext;
 
-export default Login;
+export default SignUp;

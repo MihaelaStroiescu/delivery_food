@@ -29,10 +29,8 @@
 
 
 .wrapper_homepage {
-  position: absolute;
-  top:0;
-  left:0;
-  right: 0;
+  position: relative;
+  margin-top: -140px;
 }
 
 .homepage_intro {

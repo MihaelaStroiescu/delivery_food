@@ -1,9 +1,8 @@
 import React from 'react';
-// import UserContext from '../../shared/user.context';
 import { logo, miha, dan, about_us } from './../images/index.js';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import '../views/footer.css';
+import '../footer.css';
 import axios from 'axios';
 
 class Footer extends React.Component {

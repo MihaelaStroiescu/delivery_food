@@ -1,9 +1,16 @@
+body {
+  overflow: hidden;
+}
+.login {
+  overflow: visible;
+}
 :root {
   font-family: 'Open Sans',Arial,sans-serif;
 
 }
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {

@@ -5,7 +5,7 @@ import { logo, start_homepage_two } from '../../images/index';
 import '../../App.css';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Image, Figure} from 'react-bootstrap';
-import './../OrderMenu.css';
+import '../../OrderMenu.css';
 
 class OrderMenu extends React.Component {
     constructor(props) {

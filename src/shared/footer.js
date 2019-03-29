@@ -3,7 +3,7 @@ import { logo, miha, dan, about_us } from './../images/index.js';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../views/footer.css';
+import '../footer.css';
 import axios from 'axios';
 
 

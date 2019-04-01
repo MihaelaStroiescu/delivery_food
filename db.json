@@ -262,7 +262,7 @@
           "name": "1/4 Chicken",
           "position": 10,
           "description": "Quarter Chicken Marinated with PERi-PERi Sauce and Grilled",
-          "images": [],
+          "images": "peri-peri-chicken.jpg",
           "sub-items": [
             {
               "id": "224543",
@@ -364,7 +364,7 @@
           "name": "5 Chicken Wings",
           "position": 12,
           "description": "Original Flavours or PERi-PEREi Crusted (P)",
-          "images": "five-chicken-wings.jpg",
+          "images": "10-wings-in-peri-peri-flavors.jpg",
           "sub-items": [
             {
               "id": "224561",
@@ -778,7 +778,7 @@
           "name": "Dessert",
           "position": 22,
           "description": "",
-          "images": [],
+          "images": "dessert.jpg",
           "sub-items": [
             {
               "id": "224665",
@@ -823,7 +823,7 @@
           "name": "PERi-PERi Chips (P)",
           "position": 23,
           "description": "Crunchy Chips with PERi-PERi Sauce",
-          "images": [],
+          "images": "jumbo-platter.jpg",
           "sub-items": [
             {
               "id": "224492",
@@ -860,7 +860,7 @@
           "name": "Spicy Rice",
           "position": 24,
           "description": "Spicy fried rice",
-          "images": [],
+          "images": "jumbo-platter.jpg",
           "sub-items": [
             {
               "id": "224498",
@@ -897,7 +897,7 @@
           "name": "Coleslaw (M)",
           "position": 25,
           "description": "Cabbage, Carrot, Nando&amp;#039;s Special Mayonnaise",
-          "images": [],
+          "images": "jumbo-platter.jpg",
           "sub-items": [
             {
               "id": "224504",
@@ -934,7 +934,7 @@
           "name": "Grilled Veg",
           "position": 26,
           "description": "Grilled Assorted Vegetables",
-          "images": [],
+          "images": "jumbo-platter.jpg",
           "sub-items": [
             {
               "id": "224510",
@@ -971,7 +971,7 @@
           "name": "Garlic Bread",
           "position": 27,
           "description": "Toasted Garlic Flavored Bread",
-          "images": [],
+          "images": "jumbo-platter.jpg",
           "sub-items": [
             {
               "id": "224516",
@@ -1016,7 +1016,7 @@
           "name": "Portuguese Salad",
           "position": 28,
           "description": "Fresh Tomato, Nando&amp;#039;s Peri-Olives, Mixed Peppers, Cucumber and Onion on A Bed of Crisp Lettuce",
-          "images": [],
+          "images": "salads.jpg",
           "sub-items": [
             {
               "id": "224534",
@@ -1039,7 +1039,7 @@
           "name": "Mediterranean Salad",
           "position": 29,
           "description": "Piccolo Tomato, Cucumber, Sweet Peppers and Mixed Leaves. Sprinkled with Olives and Feta Cheese",
-          "images": [],
+          "images": "salads.jpg",
           "sub-items": [
             {
               "id": "224537",
@@ -1062,7 +1062,7 @@
           "name": "Caesar Salad (M)",
           "position": 30,
           "description": "Cos Lettuce Sprinkled with Parmesan Cheese, Caesar Dressing and Crunchy Croutons",
-          "images": [],
+          "images": "salads.jpg",
           "sub-items": [
             {
               "id": "224540",
@@ -1093,7 +1093,7 @@
           "name": "Cataplana Algarve",
           "position": 31,
           "description": "PERi-PERi Chicken Thighs, Mixed Peppers, Chickpeas, Spicy Rice and Cataplana Sauce",
-          "images": [],
+          "images": "cataplana-algarve.jpg",
           "sub-items": [
             {
               "id": "224612",
@@ -1124,7 +1124,7 @@
           "name": "Chicken Wrap (Y)",
           "position": 32,
           "description": "A Lightly Toasted Wrap, Generously Filled With Tender Chicken, Chili Jam, Green Leaf Lettuce and Tangy Yoghurt Sauce",
-          "images": [],
+          "images": "burgers-pitas-wraps.jpg",
           "sub-items": [
             {
               "id": "224630",
@@ -1175,7 +1175,7 @@
           "name": "Chicken Breast Burger (M)",
           "position": 33,
           "description": "Served on A Toasted Portuguese Roll with Fresh Rocket, Tomato, Pickled Red Onions and Perinaise",
-          "images": [],
+          "images": "burgers-pitas-wraps.jpg",
           "sub-items": [
             {
               "id": "224639",
@@ -1226,7 +1226,7 @@
           "name": "Chicken Caesar Wrap (M)",
           "position": 34,
           "description": "Served in A Toasted Wrap Full Of PERi-PERi Chicken, Crunchy Croutons, Parmesan Cheese and Sundried Tomatoes, All Smothered in Creamy Caesar Dressing",
-          "images": [],
+          "images": "all-together-now.jpg",
           "sub-items": [
             {
               "id": "224648",
@@ -1277,7 +1277,7 @@
           "name": "Chicken Pita (M)",
           "position": 35,
           "description": "Served in A Lightly Toasted Pita, Stuffed With Chicken Tenders, Crisp Veggie Salad and Creamy Whip",
-          "images": [],
+          "images": "cataplana-algarve.jpg",
           "sub-items": [
             {
               "id": "224657",
@@ -1340,10 +1340,34 @@
       "id": 2
     },
     {
-      "name": "Daniel Ancuta",
-      "email": "ancutadaniel@gmail.com",
+      "name": "Test",
+      "email": "test@test.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "name": "Alex",
+      "email": "marius@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Alex ",
+      "email": "test@test.com",
+      "password": "12",
+      "id": 5
+    },
+    {
+      "name": "Marius",
+      "email": "marius@gmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "name": "Test",
+      "email": "test@test.com",
+      "password": "123123",
+      "id": 7
     }
   ]
 }

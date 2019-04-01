@@ -1,16 +1,13 @@
 
-.ordermenu_wrapper {
+.ordermenu_intro {   
+    margin: 50px auto 0px;
+    height: 47vh; 
+    background-image: url(./images/ordermenu_hero.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.ordermenu_intro {
-    margin: 0 auto;
-  width: 100%;
-  height: 80vh;
-  background-image: url(./images/start-homepage-two.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .ordermenu_header_img {
     width: 100%;
@@ -18,37 +15,36 @@
     position: relative;
 }
 
-.ordermenu_title {
-    padding: 2vw;
-    position: absolute;
-    z-index: 99;
-    margin-top: 15vw;
-    margin-left: 12vw;
-    font-weight: bold;
-
-}
-
-.ordermenu_list {
-    background-color: rgb(240, 240, 247);
+.ordermenu_list {    
     list-style-type: none;
-    margin: 1vw auto;
+    margin: 0px;
+    margin-bottom: 30px!important;
     padding: 1vw;
-    border-bottom: 3px solid rgb(175, 179, 184);
+    border-radius: 10px!important;    
+    transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, box-shadow 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
 }
+.ordermenu_list:first-child {margin-top: 150px!important;}
 
 .ordermenu_list:hover {
  box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 60px 0px;
   transform: translateX(5px);
 }
-
-.ordermenu_img {
-    width: 180px;
-    height: 140px;
-    border: 10px solid white;
+.ordermenu_list .figure-img {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-
+.order_dish {
+    display: flex;
+    justify-content: center;
+}
 .ordermenu_price {
     font-size: 1.5vw;
     color: rgb(94, 115, 141);
     margin-top: 50px;
+}
+@media (max-width: 1200px) {
+    .ordermenu_intro {   
+        margin: 50px auto 0px;
+        height: 30vh; 
+    }
 }

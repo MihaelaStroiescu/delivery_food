@@ -7,6 +7,7 @@ import axios from 'axios';
 import UserContext from '../../shared/user.context';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import '../../ModalLogin.css';
 
 class ModalLogin extends React.Component {
     constructor(...args) {

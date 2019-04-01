@@ -29,7 +29,7 @@ class MainMenu extends React.Component {
                         </LinkContainer>
                     </Nav>
                     <ButtonToolbar>
-                            <Button variant="outline-success" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
+                            <Button className="btn_mob" variant="outline-success" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                             <ModalLogin show={this.state.modalShow} onHide={modalClose} />
                     </ButtonToolbar>
 

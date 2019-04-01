@@ -155,7 +155,7 @@ class HomePage extends React.Component {
                                 </Col>
                                 <Col xs={12} md={6} className="map" >
                                     <Col className="homepage_google_map">
-                                        <Map google={this.props.google} 
+                                        <Map className="map_google" google={this.props.google} 
                                             initialCenter={{
                                                     lat: 45.6525767,
                                                     lng: 25.5264224

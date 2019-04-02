@@ -1,5 +1,5 @@
 .sign_up_container {
-    height: 75vh;
+    height: 100%;
     background-image: url(./images/bg_sign_up.jpg);
     background-size: cover;
     background-position: center;
@@ -7,10 +7,13 @@
 }
 .form_container {
     background-color: #f5f6f7;
-    margin-top: 20vh;
+    margin-top: 75px;
     border-radius: 10px;
     -webkit-box-shadow: -1px 3px 38px 5px rgba(245, 247, 248,0.5), 2px 5px 36px 0px rgba(245, 247, 248,0.5), 2px 5px 35px 0px rgba(245, 247, 248,0.5);
     box-shadow: -1px 3px 38px 5px rgba(245, 247, 248,0.5), 2px 5px 36px 0px rgba(245, 247, 248,0.5), 2px 5px 35px 0px rgba(245, 247, 248,0.5);
+    width: 50%!important;
+    margin-bottom: 75px;
+
 }
 .form_container form {
     width: 50%;

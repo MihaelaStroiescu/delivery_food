@@ -46,6 +46,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-y: -15px;
 }
 .homepage_intro::before{
   content: '';
@@ -60,7 +61,7 @@
 }
 
 .homepage_user {
-  padding: 45vh 0px;
+  padding: 180px 0px;
   font-weight: bold;
   font-size: 2rem;
 

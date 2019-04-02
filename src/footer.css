@@ -1,84 +1,44 @@
 
 .footer_wrapper {
-    margin: 5vw auto 0 auto;
-    width: 100%;
-    background-color: rgba(0,123,255,.25);
+   background-color:#fff;
 }
 
 .footer_first_row {
-    display: flex;
-    width: 100%;
     padding: 2vw;
-    flex-direction: row;
     justify-content: center;
     align-content: center;
 }
-
-.footer_logo {
-    padding: 1.2vw 0.5vw;
-    align-items: center;
+.navbar-light .navbar-nav.footer_menu a {
+    color: #999 !important;
+    padding-right: 60px !important;
 }
-
-.footer_order {
-    padding: 1.2vw 0.5vw;
-    align-items: center;
-}
-
-.footer_categ a:hover {
+.navbar-light .navbar-nav.footer_menu a:hover {
+    color: #28a745 !important;
     text-decoration: none;
 }
-
-.footer_title {
-    color: rgb(26, 26, 110);
-    padding: 0 0.5vw;
-}
-
-.footer_title_phone a {
-    font-size: 1.1rem;
-    color: rgb(26, 26, 110);
-}
-    .footer_title_phone a:hover {
-        text-decoration: none;
-    }
-
-.footer_contact {
-    padding: 1.2vw 0.5vw;
-    width: 100%;
-}
-
-
-.footer_contact_img {
-    width: 50%;
-    border-radius: 50%;
-}
-.footer_title_contact {
-    padding-top: 2vw;
-    margin: auto;
-    color: rgb(26, 26, 110);
-}
-
-.footer_categ {
-    float: left;
-}
-.footer_paragraph {
-    padding: 1vw;
-    font-size: 1.2vw;
-    color: rgb(26, 26, 110);
+.footer_first_row::after {
+    content: '';
+    display: block;
+    width: 65%;
+    height: 1px;
+    background-color: rgba(153,153,153, 0.5);
+    position: relative;
+    top: 10px;
 
 }
-
-.footer_pargraph_follow {
-    padding: 1vw;
-    font-size: 1.5vw;
-    color: rgb(26, 26, 110);
+.social_row {
+    margin-bottom: 1vh;
 }
-
-.google_icon {
-    width: 150px;
-    color: rgb(6, 6, 112);
+.social {
+    text-align: center;
 }
-
-.facebook_icon {
-    width: 150px;
-    color: rgb(6, 6, 112);
+.social span {
+    margin-right: 50px;
+}
+.social_app {
+    margin-right: 50px;
+}
+.social_google, .social_app {
+    width: 75px;
+    height: 28px;
 }

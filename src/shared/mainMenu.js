@@ -1,9 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, Button, ButtonToolbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { logo } from '../images/index.js';
 import ModalLogin from '../views/pages/ModalLogin';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class MainMenu extends React.Component {
     constructor(props) {
@@ -16,28 +15,21 @@ class MainMenu extends React.Component {
         let modalClose = () => this.setState({ modalShow: false });
         return (
             <Navbar variant="light" expand="sm">
-                <LinkContainer to='/'>
-                    <Navbar.Brand>
-                        <img src= {logo} width="80" height="80" className="d-inline-block align-top" alt="React Bootstrap logo" />
-                        <p>YourMenu</p>
-                    </Navbar.Brand>
-                </LinkContainer>
-
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <LinkContainer exact to="/">
-                            <Nav.Link>Home</Nav.Link>
+                        <LinkContainer exact to="/">                            
+                            <Nav.Link><span><FontAwesomeIcon icon={['fas', 'home']} size={'lg'}/></span> Home</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/order">
-                            <Nav.Link>Order</Nav.Link>
+                            <Nav.Link><span className="book"><FontAwesomeIcon icon={['fas', 'book-open']} size={'lg'}/></span>Order</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/signup">
-                            <Nav.Link>Sign Up</Nav.Link>
+                            <Nav.Link>Sign Up<span className="sign_fa"><FontAwesomeIcon icon={['fas', 'sign-in-alt']} size={'lg'}/></span></Nav.Link>
                         </LinkContainer>
                     </Nav>
                     <ButtonToolbar>
-                            <Button variant="outline-success" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
+                            <Button className="btn_mob" variant="outline-success" onClick={() => this.setState({ modalShow: true })}> Log In </Button>
                             <ModalLogin show={this.state.modalShow} onHide={modalClose} />
                     </ButtonToolbar>
 

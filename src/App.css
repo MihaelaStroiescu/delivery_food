@@ -12,6 +12,10 @@
   text-align: center;
   overflow: hidden;
 }
+.App.col {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
@@ -36,10 +40,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.navbar-dark.bg-dark {
-    background-color: #4a6ee7!important;
 }
 
 @keyframes App-logo-spin {

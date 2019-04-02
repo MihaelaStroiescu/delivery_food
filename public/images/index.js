@@ -9,7 +9,6 @@ import salads from './salads.jpg';
 import burgers_pitas_wraps from './burgers-pitas-wraps.jpg';
 import logo from './menu_logo.png';
 import start_homepage_one from './start-homepage-one.jpg';
-import start_homepage_two from './start-homepage-two.jpg';
 import bottle from './bottle.png';
 import phone from './phone.png';
 import trophy from './trophy.png';
@@ -51,7 +50,6 @@ export {
     burgers_pitas_wraps,
     logo,
     start_homepage_one,
-    start_homepage_two,
     bottle,
     phone,
     trophy,

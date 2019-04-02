@@ -1,11 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
-import { logo, miha, dan } from './../images/index.js';
-import { Container, Row, Col } from 'react-bootstrap';
-=======
 import FooterMenu from './../shared/footerMenu';
 import { Container, Row, Col, Image } from 'react-bootstrap';
->>>>>>> dan
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { google, appstore} from './../images/index';

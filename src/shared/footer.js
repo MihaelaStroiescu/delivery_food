@@ -31,12 +31,12 @@ class Footer extends React.Component {
             <>
             <Container className="footer_wrapper" fluid>
                 <Row className="footer_first_row">
-                    <FooterMenu>7</FooterMenu>                                     
+                    <FooterMenu>7</FooterMenu>
                 </Row>
-                <Row className="social_row">            
+                <Row className="social_row">
                     <Col className="social">
                         <Link to='/'>
-                            <span><FontAwesomeIcon icon={['fab', 'google']} /></span>   
+                            <span><FontAwesomeIcon icon={['fab', 'google']} /></span>
                         </Link>
                         <Link to="/">
                              <span><FontAwesomeIcon icon={['fab', 'facebook']} /></span>

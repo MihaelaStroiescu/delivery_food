@@ -1,7 +1,7 @@
 
-.ordermenu_intro {   
+.ordermenu_intro {
     margin: 50px auto 0px;
-    height: 47vh; 
+    height: 47vh;
     background-image: url(./images/ordermenu_hero.png);
     background-position: center;
     background-size: cover;
@@ -15,12 +15,12 @@
     position: relative;
 }
 
-.ordermenu_list {    
+.ordermenu_list {
     list-style-type: none;
     margin: 0px;
     margin-bottom: 30px!important;
     padding: 1vw;
-    border-radius: 10px!important;    
+    border-radius: 10px!important;
     transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s, box-shadow 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
 }
 .ordermenu_list:first-child {margin-top: 150px!important;}
@@ -43,8 +43,8 @@
     margin-top: 50px;
 }
 @media (max-width: 1200px) {
-    .ordermenu_intro {   
+    .ordermenu_intro {
         margin: 50px auto 0px;
-        height: 30vh; 
+        height: 30vh;
     }
 }

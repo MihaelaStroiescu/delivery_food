@@ -18,11 +18,14 @@ class MainMenu extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <LinkContainer exact to="/">                            
+                        <LinkContainer exact to="/">
                             <Nav.Link><span><FontAwesomeIcon icon={['fas', 'home']} size={'lg'}/></span> Home</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/order">
                             <Nav.Link><span className="book"><FontAwesomeIcon icon={['fas', 'book-open']} size={'lg'}/></span>Order</Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to="/contact">
+                            <Nav.Link><span className="book"><FontAwesomeIcon icon={['fas', 'edit']} size={'lg'}/></span>Contact</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="/signup">
                             <Nav.Link>Sign Up<span className="sign_fa"><FontAwesomeIcon icon={['fas', 'sign-in-alt']} size={'lg'}/></span></Nav.Link>

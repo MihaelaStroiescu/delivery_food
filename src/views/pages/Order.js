@@ -36,12 +36,12 @@ class Order extends React.Component {
                             <Row className="order_intro">
                                 <Col className="order_user">
                                     <p className="logo_rot"><Image src={logo} className="App-logo order" alt="menu" /></p>
-                                    <h1>May I Take Your Order? <br></br> {user.name}</h1>                                    
+                                    <h1>May I Take Your Order? <br></br> {user.name}</h1>
                                 </Col>
-                            </Row>                           
+                            </Row>
                         </Container>
                         <Container fluid className="categ_container">
-                            <Row> 
+                            <Row>
                                 <Col>
                                     <h2>Please select Your favorite dish<br></br> from our Menu</h2>
                                     <Container>

@@ -7,7 +7,7 @@ import  Footer from './shared/footer';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckSquare, fas } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle, fab, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { Homepage, Order, SignUp, OrderMenu } from './views/pages';
+import { Homepage, Order, SignUp, OrderMenu, Contact } from './views/pages';
 import { Col } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -38,6 +38,7 @@ class App extends  React.Component {
               <Route exact path="/" component={ Homepage } />
               <Route exact path="/order" component={ Order } />
               <Route exact path="/signup" component={ SignUp } />
+              <Route exact path="/contact" component={ Contact } />
               <Route exact path="/ordermenu/:id" component={ OrderMenu } />
           </Col>
           <Col>

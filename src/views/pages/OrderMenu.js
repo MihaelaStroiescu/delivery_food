@@ -29,7 +29,7 @@ class OrderMenu extends React.Component {
             <>
                 <UserContext.Consumer>
                     {({ user }) => (
-                    <>    
+                    <>
                         <Container fluid className="wrapper_homepage">
                             <Row className="ordermenu_intro">
                                 <Col className="order_user">
@@ -37,7 +37,7 @@ class OrderMenu extends React.Component {
                                     <h1>Are you ready to order? <br></br> {user.name}</h1>
                                 </Col>
                             </Row>
-                        </Container>                     
+                        </Container>
                         <Container>
                             <Col className="ordermenu_wrapper">
                                 <ListGroup as="ul">

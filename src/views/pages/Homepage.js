@@ -25,25 +25,25 @@ class HomePage extends React.Component {
             <UserContext.Consumer>
                 { ({user}) => (
                     <>
-                        <Container fluid className="wrapper_homepage">
+                            <Container fluid className="wrapper_homepage" id="welcome">
                             <Row className="homepage_intro">
-                                <Col className="homepage_user">                              
+                                <Col className="homepage_user">
                                     <Image src= {logo} width="150" height="150" className="d-inline-block align-top" alt="React Bootstrap logo" />
                                     <p>Welcome {user.name}</p>
                                     <p>YourMenu delivers in your neighborhood</p>
                                     <Form inline>
                                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                                         <Button variant="outline-success">Search</Button>
-                                    </Form>                    
+                                    </Form>
                                 </Col>
                             </Row>
-                        </Container>    
+                        </Container>
                         <Container className="homepage_middle">
                             <Row className="homepage_middle_header">
                                 <Col>
                                     <h1>Why order with YourMenu </h1>
                                     <p className="homepage_divider"></p>
-                                </Col>                           
+                                </Col>
                             </Row>
                             <Row>
                                 <Col xs={12} md={4}>
@@ -80,18 +80,18 @@ class HomePage extends React.Component {
                                     <Col>
                                         <Col><h3>Free, Easy,<br></br> and Essential</h3></Col>
                                         <p>It's free to order, so save time tackling your to-do list at home, at work, or on the go.</p>
-                                    </Col>   
+                                    </Col>
                                 </Col>
                                 <Col xs={12} md={4}>
                                     <Image className="homepage_middle_img" src={trophy} alt="Trophy" />
                                     <Image className="homepage_middle_shadow" src={shadow}/>
                                     <Col>
-                                        <Col><h3>Earn Points and Get Rewards</h3></Col>                                          
+                                        <Col><h3>Earn Points and Get Rewards</h3></Col>
                                         <p>It's free to order, so save time tackling your to-do list at home, at work, or on the go.</p>
                                     </Col>
                                 </Col>
                             </Row>
-                            </Container>                            
+                            </Container>
                         <Container fluid className="homepage_about_us" id="about">
                             <Row>
                             <Container>
@@ -100,7 +100,7 @@ class HomePage extends React.Component {
                                     <div className="homepage_divider"></div>
                                     <p className="hompage_paragraph">YourMenu.com lets people order online from their favorite local restaurants, liquor stores, grocery stores, and laundry and dry cleaning providers.</p>
                                 </Col>
-                                <Col>                                   
+                                <Col>
                                     <ListGroup as ="ul">
                                          <ListGroup.Item as="li">
                                             <p><FontAwesomeIcon icon={['fas', 'users']} size={'3x'}/></p>
@@ -130,11 +130,11 @@ class HomePage extends React.Component {
                                     <h1>The neighborhood <br></br>in your pocket</h1>
                                     <Col className="line"><Image src={line}></Image></Col>
                                     <Col className="easy_more">
-                                        <span><strong>EASY ORDERING</strong><br></br> Quick, convenient & free to order on any device.</span>                                                                             
+                                        <span><strong>EASY ORDERING</strong><br></br> Quick, convenient & free to order on any device.</span>
                                         <span><strong>MORE CHOICES</strong><br></br>Your one-stop shop for everything from food to dry cleaning.</span>
-                                        <p><Image className="social_app" src={appstore}></Image></p>   
-                                        <p><Image className="social_google" src={google}></Image></p>                                        
-                                    </Col>                                                                      
+                                        <p><Image className="social_app" src={appstore}></Image></p>
+                                        <p><Image className="social_google" src={google}></Image></p>
+                                    </Col>
                                 </Container>
                             </Row>
                         </Container>
@@ -143,9 +143,9 @@ class HomePage extends React.Component {
                                 <Col>
                                     <h1>Merchant testimonials</h1>
                                     <p className="homepage_divider"></p>
-                                </Col>                           
-                            </Row>                            
-                            <TestimonialCarousel></TestimonialCarousel>   
+                                </Col>
+                            </Row>
+                            <TestimonialCarousel></TestimonialCarousel>
                         </Container>
                         <Container fluid>
                             <Row className="map_row">
@@ -155,11 +155,11 @@ class HomePage extends React.Component {
                                 </Col>
                                 <Col xs={12} md={6} className="map" >
                                     <Col className="homepage_google_map">
-                                        <Map className="map_google" google={this.props.google} 
+                                        <Map className="map_google" google={this.props.google}
                                             initialCenter={{
                                                     lat: 45.6525767,
                                                     lng: 25.5264224
-                                                }} 
+                                                }}
                                             zoom={10}
                                         >
                                         <Marker onClick={this.onMarkerClick} name={'Current location'} />
@@ -168,7 +168,7 @@ class HomePage extends React.Component {
                                 </Col>
                             </Row>
                         </Container>
-                      
+
                     </>
                 )}
             </UserContext.Consumer>

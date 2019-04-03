@@ -19,7 +19,7 @@ class SignUp extends React.Component {
         name: '',
         email: '',
         password: '',
-        redirect: false,        
+        redirect: false,
         validated: false,
         isValid: true,
         userExist: []
@@ -29,21 +29,21 @@ class SignUp extends React.Component {
       this.formSubmit = this.formSubmit.bind(this);
   }
 
-  async inputChanged(e) { // hot plate
+  async inputChanged(e) { // boiled plate
     const value = e.currentTarget.value;
     const user = this.state.user;
     user[e.currentTarget.id] = value;
     this.setState({user});
   }
-  
+
   async formSubmit(e) {
     e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       return;
-    } 
+    }
 
-    const resp =  await axios.post(this.apiUrl, this.state.user);  
+    const resp =  await axios.post(this.apiUrl, this.state.user);
     console.log(resp.data);
 
     this.context.handleUserChange(resp.data);
@@ -55,7 +55,7 @@ class SignUp extends React.Component {
           return (
           <Redirect to='/' />
           );
-      }            
+      }
       const {validated} = this.state;
       return (
         <UserContext.Consumer>
@@ -65,7 +65,7 @@ class SignUp extends React.Component {
                 <Container className="form_container">
                     <Image src= {logo} width="80" height="80" className="d-inline-block align-top" alt="React Bootstrap logo" />
                     <Col>
-                      
+
                       <h2><FontAwesomeIcon icon={['fas', 'user-plus']} size={'lg'}/>SIGN UP</h2>
                     </Col>
                     <Form noValidate validated= {validated} onSubmit={e => this.formSubmit(e)} >
@@ -104,7 +104,7 @@ class SignUp extends React.Component {
             //   </ButtonToolbar> */}
             //     <div>
             //       {/* <p>{JSON.stringify(this.state)}</p>   */}
-            //       <p>{ this.state.userExist.map(user => user.name)}</p>                  
+            //       <p>{ this.state.userExist.map(user => user.name)}</p>
             //     </div>
             // </div>
           ) }

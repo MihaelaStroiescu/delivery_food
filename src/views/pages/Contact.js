@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Contact extends React.Component {
     constructor(props) {
         super(props);
-        this.apiUrl = "http://localhost:3004/users";
+        this.apiUrl = "http://localhost:3004/contact";
         this.state = {
             id: 0,
             user: {},

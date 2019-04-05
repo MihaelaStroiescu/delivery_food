@@ -32,3 +32,6 @@
 .form_container h2 {margin-top:30px;}
 
 .form_container h2 svg {margin-right:10px;}
+ 
+.send:hover {text-decoration: none; color:#ccc;}
+.send {color: #000;}

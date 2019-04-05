@@ -1344,6 +1344,12 @@
       "email": "test@test.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "name": "Daniel Ancuta",
+      "email": "ancutadaniel@gmail.com",
+      "password": "123",
+      "id": 4
     }
   ],
   "contact": [

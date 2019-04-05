@@ -3,8 +3,11 @@ import axios from 'axios';
 import UserContext from '../../shared/user.context';
 import '../../App.css';
 import { Container, Row, Col, Figure, Image, ListGroup, ListGroupItem} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Review from '../../views/pages/Review';
 import '../../OrderMenu.css';
 import { logo } from '../../images/index.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class OrderMenu extends React.Component {
     constructor(props) {
@@ -13,7 +16,8 @@ class OrderMenu extends React.Component {
         this.state = {
             menu: {},
             menu_items: [],
-            sub_items: []
+            sub_items: [],
+            tags:[]
         };
 
     }
@@ -21,6 +25,7 @@ class OrderMenu extends React.Component {
         const menu = (await axios.get(this.apiUrl)).data;
         this.setState({menu, menu_items: menu['menu-items']});
         this.setState({sub_items: menu['menu-items'][0]['sub-items']})
+        this.setState({sub_items: menu['menu-items'][0]['tags']})
         //console.log(menu['menu-items']);
     }
 
@@ -44,7 +49,7 @@ class OrderMenu extends React.Component {
                                     {this.state.menu_items.map(menu =>
                                         <ListGroupItem as="li" key={menu.name} className="ordermenu_list">
                                             <Row>
-                                                <Col md={4} sm={10}>
+                                                <Col md={3} sm={10}>
                                                     <Figure>
                                                         <Figure.Image className="ordermenu_img"
                                                             src={"../images/" + menu.images} width={280} height={190} alt="171x180" title={menu.name} />
@@ -53,10 +58,18 @@ class OrderMenu extends React.Component {
                                                         </Figure.Caption>
                                                     </Figure>
                                                 </Col>
-                                                <Col md={4} sm={2} className="order_dish">
+                                                <Col md={3} sm={12} xs={12} className="ordermenu_review">
+                                                    <FontAwesomeIcon className="star-review" icon={['fas', 'star']} size={'1x'} />
+                                                    <FontAwesomeIcon className="star-review" icon={['fas', 'star']} size={'1x'} />
+                                                    <FontAwesomeIcon className="star-review" icon={['fas', 'star']} size={'1x'} />
+                                                    <FontAwesomeIcon className="star-review" icon={['fas', 'star']} size={'1x'} />
+                                                    <FontAwesomeIcon className="star-review" icon={['fas', 'star']} size={'1x'} /><br/>
+                                                    <Link className="ordermenu_review_title" key={menu.tags} to={"/ordermenu/review/" + menu.id }>Review</Link>
+                                                </Col>
+                                                <Col md={3} sm={12} xs={12} className="order_dish">
                                                     <p className="ordermenu_price">{menu['sub-items'][0].cuisine_name}</p>
                                                 </Col>
-                                                <Col md={4} sm={12}>
+                                                <Col md={3} sm={12} xs={12}>
                                                     <p className="ordermenu_price">{menu['sub-items'][0].price + "$"}</p>
                                                 </Col>
                                             </Row>

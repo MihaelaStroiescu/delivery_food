@@ -17,6 +17,7 @@ class Contact extends React.Component {
             user: {},
             name: '',
             email: '',
+            commentId: 0,
             comment:'',
             validated: false,
             isValid: true
@@ -79,6 +80,7 @@ class Contact extends React.Component {
                                         </Form.Group>
                                     <Form.Group>
                                         <Form.Control as="textarea" id="comment" rows="3" value={this.state.user.comment} onChange={this.inputChanged} placeholder="Leave a comment:"/>
+
                                     </Form.Group>
                                     <Button type="submit" variant="outline-secondary"><a className="send" href="mailto:{this.state.user.email}">Send</a></Button>
                                 </Form>

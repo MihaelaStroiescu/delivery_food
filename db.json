@@ -1356,8 +1356,34 @@
     {
       "name": "Alex",
       "email": "test@test.com",
-      "comment": "Test",
+      "password": "12",
+      "id": 5
+    },
+    {
+      "name": "Marius",
+      "email": "marius@gmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "name": "Test",
+      "email": "test@test.com",
+      "password": "123123",
+      "id": 7
+    }
+  ],
+  "contact": [
+    {
+      "name": "miha",
+      "email": "mihaela@stroiescu.ro",
+      "comment": "sfg",
       "id": 1
+    },
+    {
+      "name": "miha",
+      "email": "mihaela@stroiescu.ro",
+      "comment": "sdfghjkl.,mngfd",
+      "id": 2
     }
   ]
 }

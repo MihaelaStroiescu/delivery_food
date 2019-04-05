@@ -1,13 +1,13 @@
 
-.order_intro {   
+.order_intro {
   margin: 0 auto;
-  height: 450px; 
+  height: 450px;
   background-image: url(./images/order_hero.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.App-logo.order {   
+.App-logo.order {
   height: 150px;
   pointer-events: none;
   transform: rotate(-20deg);
@@ -16,7 +16,7 @@
 .order_user {
   margin-top: 10vh;
 }
-.order_user .logo_rot:hover {  
+.order_user .logo_rot:hover {
   cursor: pointer;
   animation: App-logo-spin infinite 20s linear;
 }
@@ -73,8 +73,8 @@
 }
 
 @media (max-width: 1200px) {
-  .order_intro {      
-    background-image: url(./images/order_hero_sec.png);   
+  .order_intro {
+    background-image: url(./images/order_hero_sec.png);
   }
 }
 @media (max-width: 576px) {

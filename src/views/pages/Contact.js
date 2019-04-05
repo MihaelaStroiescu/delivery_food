@@ -11,12 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Contact extends React.Component {
     constructor(props) {
         super(props);
-        this.apiUrl = "http://localhost:3004/users";
+        this.apiUrl = "http://localhost:3004/contact";
         this.state = {
             id: 0,
             user: {},
             name: '',
             email: '',
+            commentId: 0,
             comment:'',
             validated: false,
             isValid: true
@@ -79,6 +80,7 @@ class Contact extends React.Component {
                                         </Form.Group>
                                     <Form.Group>
                                         <Form.Control as="textarea" id="comment" rows="3" value={this.state.user.comment} onChange={this.inputChanged} placeholder="Leave a comment:"/>
+
                                     </Form.Group>
                                     <Button type="submit" variant="outline-secondary">Send</Button>
                                 </Form>

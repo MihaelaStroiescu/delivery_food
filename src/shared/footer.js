@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { google, appstore} from './../images/index';
 import '../Footer.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -19,11 +19,11 @@ class Footer extends React.Component {
 
     }
 
-    async componentDidMount() {
-        const resp = await axios.get(this.apiUrl);
-        this.setState({ category: resp.data });
-        console.log(resp.data);
-    }
+    // async componentDidMount() {
+    //     const resp = await axios.get(this.apiUrl);
+    //     this.setState({ category: resp.data });
+    //     console.log(resp.data);
+    // }
 
 
     render() {

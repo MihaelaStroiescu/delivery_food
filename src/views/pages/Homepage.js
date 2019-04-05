@@ -1,11 +1,12 @@
 import React  from 'react';
 import UserContext from '../../shared/user.context';
 import { bottle, phone, trophy, cell, shadow, h2_pic, h2_pic_1, h2_pic_2, line, appstore, google } from '../../images/index.js';
-import { Container, Row, Col, Image, Form, Button, FormControl, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Image, ListGroup } from 'react-bootstrap';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { logo } from '../../images/index' ;
 import {TestimonialCarousel} from './index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Search from './Search';
 import '../../App.css';
 import '../../Homepage.css';
 
@@ -28,13 +29,12 @@ class HomePage extends React.Component {
                             <Container fluid className="wrapper_homepage" id="welcome">
                             <Row className="homepage_intro">
                                 <Col className="homepage_user">
-                                    <Image src= {logo} width="150" height="150" className="d-inline-block align-top" alt="React Bootstrap logo" />
-                                    <p>Welcome {user.name}</p>
-                                    <p>YourMenu delivers in your neighborhood</p>
-                                    <Form inline>
-                                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                        <Button variant="outline-success">Search</Button>
-                                    </Form>
+                                    <Col>
+                                        <Image src= {logo} width="150" height="150" className="d-inline-block align-top" alt="React Bootstrap logo" />
+                                        <p>Welcome {user.name}</p>
+                                        <p>YourMenu delivers in your neighborhood</p> 
+                                        <Search></Search>                                       
+                                    </Col>
                                 </Col>
                             </Row>
                         </Container>

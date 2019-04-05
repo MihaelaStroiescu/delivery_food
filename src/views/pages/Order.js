@@ -22,7 +22,7 @@ class Order extends React.Component {
         const resp = await axios.get(this.apiUrl);
 
         this.setState({category: resp.data});
-       console.log(resp.data);
+       //console.log(resp.data);
     }
 
     render() {

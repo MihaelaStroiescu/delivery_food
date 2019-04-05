@@ -1344,15 +1344,11 @@
       "email": "test@test.com",
       "password": "123",
       "id": 3
-    },
+    }
+  ],
+  "contact": [
     {
       "name": "Alex",
-      "email": "marius@gmail.com",
-      "password": "123",
-      "id": 4
-    },
-    {
-      "name": "Alex ",
       "email": "test@test.com",
       "password": "12",
       "id": 5
